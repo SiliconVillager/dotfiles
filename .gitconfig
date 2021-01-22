@@ -1,0 +1,6 @@
+[user]
+	email = t.rejhons@gmail.com
+	name = Tomas Rejhons
+	signingkey = 74364E55CE1F0A35012C2527667DDFA124AD871B
+[gpg]
+	program = gpg
