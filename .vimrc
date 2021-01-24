@@ -76,3 +76,4 @@ let g:lightline = {
 
 set laststatus=2
 set updatetime=100
+set number
