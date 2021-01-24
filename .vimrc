@@ -4,8 +4,6 @@ Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
-Plug 'fatih/vim-go', { 'tag': '*' }
-Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
 Plug 'https://github.com/adelarsq/vim-matchit'
 Plug 'https://github.com/vim-scripts/taglist.vim.git'
 Plug 'frazrepo/vim-rainbow'
@@ -34,3 +32,10 @@ let g:lightline = {
 set laststatus=2
 set updatetime=100
 set number
+set ruler
+
+" Set Proper Tabs
+set tabstop=4
+set shiftwidth=4
+set smarttab
+set expandtab
