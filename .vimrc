@@ -22,6 +22,7 @@ Plug 'antoinemadec/FixCursorHold.nvim'
 Plug 'alepez/vim-gtest'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'mbbill/undotree'
+Plug 'majutsushi/tagbar'
 call plug#end()
 
 let mapleader = " "
@@ -51,6 +52,11 @@ set shiftwidth=4
 set smarttab
 set expandtab
 
+" copy, cut and paste
+vmap <C-c> "+y
+vmap <C-x> "+c
+vmap <C-v> c<ESC>"+p
+imap <C-v> <ESC>"+pa
 
 "--------------------------------------------------------------------------
 " NERD Tree
