@@ -21,6 +21,7 @@ Plug 'cdelledonne/vim-cmake'
 Plug 'antoinemadec/FixCursorHold.nvim'
 Plug 'alepez/vim-gtest'
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'mbbill/undotree'
 call plug#end()
 
 let mapleader = " "
@@ -50,10 +51,16 @@ set shiftwidth=4
 set smarttab
 set expandtab
 
+
+"--------------------------------------------------------------------------
+" Undo Tree
+"--------------------------------------------------------------------------
+
+nnoremap <leader>u :UndotreeShow<CR>
+
 "--------------------------------------------------------------------------
 " File browsing
 "--------------------------------------------------------------------------
-"
 
 let g:floaterm_position = 'bottom'
 let g:floaterm_width = 1.0
@@ -82,14 +89,13 @@ nmap <leader>cb :CMakeBuild<cr>
 "--------------------------------------------------------------------------
 "" GTEST
 "--------------------------------------------------------------------------
-"
 
 nmap <leader>gt :GTestRunUnderCursor<cr>
 
 "--------------------------------------------------------------------------
 " COC
 "--------------------------------------------------------------------------
-"
+
 "" TextEdit might fail if hidden is not set.
 set hidden
 
@@ -148,6 +154,8 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+
+nnoremap <leader>prw :CocSearch <C-R>=expand("<cword>")<CR><CR>
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
