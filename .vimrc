@@ -16,7 +16,13 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'jacquesbh/vim-showmarks'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'voldikss/vim-floaterm'
+Plug 'cdelledonne/vim-cmake'
+Plug 'antoinemadec/FixCursorHold.nvim'
+Plug 'alepez/vim-gtest'
 call plug#end()
+
+let mapleader = " "
 
 let g:lightline = {
       \ 'colorscheme': 'darcula',
@@ -41,6 +47,42 @@ set smarttab
 set expandtab
 
 "--------------------------------------------------------------------------
+" File browsing
+"--------------------------------------------------------------------------
+"
+
+let g:floaterm_position = 'bottom'
+let g:floaterm_width = 1.0
+let g:floaterm_height = 0.4
+
+nmap <c-t> :FloatermNew fff<cr>
+
+nnoremap <c-j> <c-w>j
+nnoremap <c-h> <c-w>h
+nnoremap <c-k> <c-w>k
+nnoremap <c-l> <c-w>l
+
+" Save on Ctrl-S
+nmap <c-s> :w<CR>
+imap <c-s> <Esc>:w<CR>a
+
+"--------------------------------------------------------------------------
+"" CMAKE
+"--------------------------------------------------------------------------
+
+let g:cmake_link_compile_commands = 1
+
+nmap <leader>cg :CMakeGenerate<cr>
+nmap <leader>cb :CMakeBuild<cr>
+
+"--------------------------------------------------------------------------
+"" GTEST
+"--------------------------------------------------------------------------
+"
+
+nmap <leader>gt :GTestRunUnderCursor<cr>
+
+"--------------------------------------------------------------------------
 " COC
 "--------------------------------------------------------------------------
 "
@@ -53,10 +95,6 @@ set nowritebackup
 
 " Give more space for displaying messages.
 set cmdheight=2
-
-" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
-" delays and poor user experience.
-set updatetime=300
 
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
