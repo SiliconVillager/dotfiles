@@ -23,12 +23,22 @@ Plug 'alepez/vim-gtest'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'mbbill/undotree'
 Plug 'majutsushi/tagbar'
+Plug 'vim-scripts/indentpython.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'alvan/vim-closetag'
+Plug 'maxmellon/vim-jsx-pretty'
 call plug#end()
 
 let mapleader = " "
 
 syntax enable
 colorscheme dracula
+filetype plugin indent on
+
+autocmd FileType html setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType css setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType cpp setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
 let g:lightline = {
       \ 'colorscheme': 'darcula',
@@ -57,6 +67,19 @@ vmap <C-c> "+y
 vmap <C-x> "+c
 vmap <C-v> c<ESC>"+p
 imap <C-v> <ESC>"+pa
+
+" word movement
+imap <S-Left> <Esc>bi
+nmap <S-Left> b
+imap <S-Right> <Esc><Right>wi
+nmap <S-Right> w
+
+" indent/unindent with tab/shift-tab
+nmap <Tab> >>
+nmap <S-tab> <<
+imap <S-Tab> <Esc><<i
+vmap <Tab> >gv
+vmap <S-Tab> <gv
 
 "--------------------------------------------------------------------------
 " FZF
@@ -280,5 +303,46 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 "--------------------------------------------------------------------------
-" COC END
+" CLOSETAG
 "--------------------------------------------------------------------------
+
+" filenames like *.xml, *.html, *.xhtml, ...
+" These are the file extensions where this plugin is enabled.
+"
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml'
+
+" filenames like *.xml, *.xhtml, ...
+" This will make the list of non-closing tags self-closing in the specified files.
+"
+let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
+
+" filetypes like xml, html, xhtml, ...
+" These are the file types where this plugin is enabled.
+"
+let g:closetag_filetypes = 'html,xhtml,phtml'
+
+" filetypes like xml, xhtml, ...
+" This will make the list of non-closing tags self-closing in the specified files.
+"
+let g:closetag_xhtml_filetypes = 'xhtml,jsx'
+
+" integer value [0|1]
+" This will make the list of non-closing tags case-sensitive (e.g. `<Link>` will be closed while `<link>` won't.)
+"
+let g:closetag_emptyTags_caseSensitive = 1
+
+" dict
+" Disables auto-close if not in a "valid" region (based on filetype)
+"
+let g:closetag_regions = {
+    \ 'typescript.tsx': 'jsxRegion,tsxRegion',
+    \ 'javascript.jsx': 'jsxRegion',
+    \ }
+
+" Shortcut for closing tags, default is '>'
+"
+let g:closetag_shortcut = '>'
+
+" Add > at current position without closing the current tag, default is ''
+"
+let g:closetag_close_shortcut = '<leader>>'
