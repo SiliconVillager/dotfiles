@@ -52,9 +52,14 @@ let g:lightline = {
       \ }
 
 set laststatus=2
-set updatetime=300
+set updatetime=100
 set number
 set ruler
+
+" sane text files
+set fileformat=unix
+set encoding=utf-8
+set fileencoding=utf-8
 
 " Set Proper Tabs
 set tabstop=4
@@ -80,6 +85,11 @@ nmap <S-tab> <<
 imap <S-Tab> <Esc><<i
 vmap <Tab> >gv
 vmap <S-Tab> <gv
+
+"--------------------------------------------------------------------------
+" auto-pairs
+"--------------------------------------------------------------------------
+au FileType python let b:AutoPairs = AutoPairsDefine({"f'" : "'", "r'" : "'", "b'" : "'"})
 
 "--------------------------------------------------------------------------
 " FZF
