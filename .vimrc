@@ -20,9 +20,13 @@ Plug 'voldikss/vim-floaterm'
 Plug 'cdelledonne/vim-cmake'
 Plug 'antoinemadec/FixCursorHold.nvim'
 Plug 'alepez/vim-gtest'
+Plug 'dracula/vim', { 'as': 'dracula' }
 call plug#end()
 
 let mapleader = " "
+
+syntax enable
+colorscheme dracula
 
 let g:lightline = {
       \ 'colorscheme': 'darcula',
@@ -36,7 +40,7 @@ let g:lightline = {
       \ }
 
 set laststatus=2
-set updatetime=100
+set updatetime=300
 set number
 set ruler
 
