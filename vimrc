@@ -27,6 +27,7 @@ Plug 'vim-scripts/indentpython.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'alvan/vim-closetag'
 Plug 'maxmellon/vim-jsx-pretty'
+Plug 'puremourning/vimspector'
 call plug#end()
 
 let mapleader = " "
@@ -117,6 +118,12 @@ set fillchars+=vert:\
 nmap <leader>ff :Files<cr>
 nmap <leader>fag :Ag<cr>
 nmap <leader>frg :Rg<cr>
+
+"--------------------------------------------------------------------------
+" VIMSCPECTOR
+"--------------------------------------------------------------------------
+
+let g:vimspector_enable_mappings = 'HUMAN'
 
 "--------------------------------------------------------------------------
 " NERD Tree
@@ -230,7 +237,7 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
-nnoremap <leader>prw :CocSearch <C-R>=expand("<cword>")<CR><CR>
+nnoremap <leader>prf :CocSearch <C-R>=expand("<cword>")<CR><CR>
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -296,8 +303,8 @@ endif
 
 " Use CTRL-S for selections ranges.
 " Requires 'textDocument/selectionRange' support of language server.
-nmap <silent> <C-s> <Plug>(coc-range-select)
-xmap <silent> <C-s> <Plug>(coc-range-select)
+"nmap <silent> <C-s> <Plug>(coc-range-select)
+"xmap <silent> <C-s> <Plug>(coc-range-select)
 
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
