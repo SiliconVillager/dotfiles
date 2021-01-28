@@ -155,6 +155,9 @@ alias .3='cd ../../..'
 alias .4='cd ../../../..'
 alias .5='cd ../../../../..'
 
+#cat
+alias cat="bat"
+
 # vim and emacs
 alias vim="nvim"
 
