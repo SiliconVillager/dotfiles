@@ -53,7 +53,8 @@ let g:lightline = {
       \ }
 
 set laststatus=2
-set updatetime=100
+set updatetime=300
+"set timeoutlen=500
 set number
 set ruler
 
@@ -123,13 +124,16 @@ nmap <leader>frg :Rg<cr>
 " VIMSCPECTOR
 "--------------------------------------------------------------------------
 
-let g:vimspector_enable_mappings = 'VISUAL_STUDIO'
+let g:vimspector_enable_mappings = 'HUMAN'
 
 "--------------------------------------------------------------------------
 " NERD Tree
 "--------------------------------------------------------------------------
 
-map <leader>t :NERDTreeToggle<CR>
+"nnoremap <leader>nf :NERDTreeFocus<CR>
+"nnoremap <C-n> :NERDTree<CR>
+nnoremap <leader>n :NERDTreeToggle<CR>
+nnoremap <leader>nf :NERDTreeFind<CR>
 
 " Close the tree on file open
 let NERDTreeQuitOnOpen=1
@@ -165,8 +169,8 @@ imap <c-s> <Esc>:w<CR>a
 
 let g:cmake_link_compile_commands = 1
 
-nmap <leader>cg :CMakeGenerate<cr>
-nmap <leader>cb :CMakeBuild<cr>
+nmap <leader>cmg :CMakeGenerate<cr>
+nmap <leader>cmb :CMakeBuild<cr>
 
 "--------------------------------------------------------------------------
 "" GTEST
