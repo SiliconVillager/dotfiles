@@ -28,6 +28,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'alvan/vim-closetag'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'puremourning/vimspector'
+Plug 'Raimondi/delimitMate'
 call plug#end()
 
 let mapleader = " "
