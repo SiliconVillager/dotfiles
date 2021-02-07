@@ -55,8 +55,8 @@ let g:lightline = {
       \ }
 
 set laststatus=2
-set updatetime=300
-"set timeoutlen=500
+set updatetime=200
+set timeoutlen=300
 set number
 set ruler
 
