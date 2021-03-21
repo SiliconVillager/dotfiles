@@ -206,6 +206,8 @@ alias mirrord="sudo reflector --latest 50 --number 20 --sort delay --save /etc/p
 alias mirrors="sudo reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist"
 alias mirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist"
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/tomas/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
@@ -215,11 +217,10 @@ else
     if [ -f "/home/tomas/anaconda3/etc/profile.d/conda.sh" ]; then
         . "/home/tomas/anaconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/tomas/anaconda3/bin:$PATH"
+        export PATH="$PATH:/home/tomas/anaconda3/bin"
     fi
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+conda deactivate
 
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
