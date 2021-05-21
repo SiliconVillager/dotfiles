@@ -198,6 +198,7 @@ alias yta-mp3="youtube-dl --extract-audio --audio-format mp3 "
 alias yta-opus="youtube-dl --extract-audio --audio-format opus "
 alias yta-vorbis="youtube-dl --extract-audio --audio-format vorbis "
 alias yta-wav="youtube-dl --extract-audio --audio-format wav "
+alias ytv="youtube-dl -f mp4 "
 alias ytv-best="youtube-dl -f bestvideo+bestaudio "
 alias ytv="youtube-dl -f mp4 "
 
