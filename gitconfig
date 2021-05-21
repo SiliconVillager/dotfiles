@@ -4,3 +4,8 @@
 	signingkey = 74364E55CE1F0A35012C2527667DDFA124AD871B
 [gpg]
 	program = gpg
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
