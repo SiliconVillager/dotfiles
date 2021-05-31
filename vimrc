@@ -38,11 +38,6 @@ syntax enable
 colorscheme dracula
 filetype plugin indent on
 
-autocmd FileType html setlocal tabstop=2 shiftwidth=2 softtabstop=2
-autocmd FileType css setlocal tabstop=2 shiftwidth=2 softtabstop=2
-autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
-autocmd FileType cpp setlocal tabstop=2 shiftwidth=2 softtabstop=2
-
 let g:lightline = {
       \ 'colorscheme': 'darcula',
       \ 'active': {
@@ -65,9 +60,10 @@ set fileformat=unix
 set encoding=utf-8
 set fileencoding=utf-8
 
-" Set Proper Tabs
-set tabstop=4
-set shiftwidth=4
+" Set Tabs
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 set smarttab
 set expandtab
 
