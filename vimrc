@@ -32,10 +32,6 @@ Plug 'https://github.com/junegunn/fzf.vim'
 " <leader>ut
 Plug 'mbbill/undotree'
 
-" Tag List
-" <leader>tl
-Plug 'https://github.com/vim-scripts/taglist.vim.git'
-
 " Better C++ highlighting
 Plug 'https://github.com/bfrg/vim-cpp-modern'
 
@@ -44,19 +40,44 @@ Plug 'https://github.com/bfrg/vim-cpp-modern'
 " <leader>cmb build
 Plug 'https://github.com/cdelledonne/vim-cmake'
 
-" To sort
+" Improved behavior of %
 Plug 'https://github.com/adelarsq/vim-matchit'
+
+" Bracket colors
 Plug 'frazrepo/vim-rainbow'
+
+" Nice git visualization
 Plug 'https://github.com/airblade/vim-gitgutter.git'
-Plug 'https://github.com/mileszs/ack.vim.git'
+
+" Git wrapper
+" :Git
+" :Git diff
 Plug 'https://github.com/tpope/vim-fugitive.git'
+
+" Cursor hold performance
 Plug 'antoinemadec/FixCursorHold.nvim'
+
+" GTest integration
 Plug 'alepez/vim-gtest'
+
+" Tagbar
+" <leader>tb
 Plug 'majutsushi/tagbar'
+
+" Python support
 Plug 'vim-scripts/indentpython.vim'
+
+" JS support
 Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
+
+" Debugger
+" <leader>di
+" <leader>dr 
+" <leader>du/dd
 Plug 'puremourning/vimspector'
+
+" To sort
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-surround'
 Plug 'alvan/vim-closetag'
@@ -140,6 +161,25 @@ map <Leader>tk <C-w>t<C-w>K
 set fillchars+=vert:\
 
 "--------------------------------------------------------------------------
+" Rainbow
+"--------------------------------------------------------------------------
+
+nmap <leader>rt :RainbowToggle<CR>
+nmap <leader>rl :RainbowLoad<CR>
+
+let g:rainbow_active = 1
+
+let g:rainbow_load_separately = [
+    \ [ '*' , [['(', ')'], ['\[', '\]'], ['{', '}']] ],
+    \ [ '*.tex' , [['(', ')'], ['\[', '\]']] ],
+    \ [ '*.cpp' , [['(', ')'], ['\[', '\]'], ['{', '}']] ],
+    \ [ '*.{html,htm}' , [['(', ')'], ['\[', '\]'], ['{', '}'], ['<\a[^>]*>', '</[^>]*>']] ],
+    \ ]
+
+let g:rainbow_guifgs = ['RoyalBlue3', 'DarkOrange3', 'DarkOrchid3', 'FireBrick']
+let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
+
+"--------------------------------------------------------------------------
 " CPP Modern
 "--------------------------------------------------------------------------
 
@@ -157,10 +197,10 @@ let g:cpp_member_highlight = 1
 let g:cpp_simple_highlight = 1
 
 "--------------------------------------------------------------------------
-" Undo Tree
+" Tagbar 
 "--------------------------------------------------------------------------
 
-noremap <Leader>tl :TlistToggle<CR>
+noremap <Leader>tb :TagbarToggle<CR>
 
 "--------------------------------------------------------------------------
 " Undo Tree
@@ -197,6 +237,18 @@ nmap <leader>frg :Rg<cr>
 "--------------------------------------------------------------------------
 
 let g:vimspector_enable_mappings = 'HUMAN'
+let g:vimspector_install_gadgets = [ 'debugpy', 'vscode-cpptools', 'CodeLLDB' ]
+
+nmap <leader>dr :VimspectorReset<CR>
+
+" mnemonic 'di' = 'debug inspect' (pick your own, if you prefer!)
+" for normal mode - the word under the cursor
+nmap <Leader>di <Plug>VimspectorBalloonEval
+" for visual mode, the visually selected text
+xmap <Leader>di <Plug>VimspectorBalloonEval
+
+nmap <leader>du <Plug>VimspectorUpFrame
+nmap <leader>dd <Plug>VimspectorDownFrame
 
 "--------------------------------------------------------------------------
 " NERD Commenter
