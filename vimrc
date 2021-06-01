@@ -1,27 +1,49 @@
 call plug#begin('~/.vim/plugged')
-Plug 'junegunn/vim-easy-align'
-Plug 'https://github.com/junegunn/vim-github-dashboard.git'
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
-Plug 'https://github.com/adelarsq/vim-matchit'
-Plug 'https://github.com/vim-scripts/taglist.vim.git'
-Plug 'frazrepo/vim-rainbow'
-Plug 'preservim/nerdcommenter'
-Plug 'https://github.com/airblade/vim-gitgutter.git'
+
+" NERD Tree
+" <C-n> or <leader>nt
+" <leader>nf
+Plug 'https://github.com/scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+
+" NERD Commenter
+" <leader>cc comment
+" <leader>cu uncomment
+" <leader>cs sexy block
+" <leader>cy yank and comment
+Plug 'https://github.com/preservim/nerdcommenter'
+
+" Lightline
 Plug 'itchyny/lightline.vim'
+" CoC
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Dracula theme
+Plug 'dracula/vim', { 'as': 'dracula' }
+
+" Easy align
+" selection -> ga= (example)
+Plug 'https://github.com/junegunn/vim-easy-align'
+
+" FZF
+" <leader>ff <leader>fag <leader>rag
+Plug 'https://github.com/junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'https://github.com/junegunn/fzf.vim'
+
+" Undo Tree
+" <leader>ut
+Plug 'mbbill/undotree'
+
+" Tag List
+Plug 'https://github.com/vim-scripts/taglist.vim.git'
+
+" To sort
+Plug 'https://github.com/adelarsq/vim-matchit'
+Plug 'frazrepo/vim-rainbow'
+Plug 'https://github.com/airblade/vim-gitgutter.git'
 Plug 'https://github.com/mileszs/ack.vim.git'
 Plug 'https://github.com/tpope/vim-fugitive.git'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'jacquesbh/vim-showmarks'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'voldikss/vim-floaterm'
 Plug 'cdelledonne/vim-cmake'
 Plug 'antoinemadec/FixCursorHold.nvim'
 Plug 'alepez/vim-gtest'
-Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'mbbill/undotree'
 Plug 'majutsushi/tagbar'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'pangloss/vim-javascript'
@@ -32,26 +54,18 @@ Plug 'tpope/vim-surround'
 Plug 'alvan/vim-closetag'
 call plug#end()
 
-let mapleader = " "
+" Theme
+colorscheme dracula
+
+" Leader
+let mapleader=" "
 
 syntax enable
-colorscheme dracula
 filetype plugin indent on
-
-let g:lightline = {
-      \ 'colorscheme': 'darcula',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'FugitiveHead'
-      \ },
-      \ }
 
 set laststatus=2
 set updatetime=200
-set timeoutlen=300
+set timeoutlen=400
 set number
 set ruler
 
@@ -66,6 +80,10 @@ set softtabstop=2
 set shiftwidth=2
 set smarttab
 set expandtab
+
+" Save on Ctrl-S
+nmap <c-s> :w<CR>
+imap <c-s> <Esc>:w<CR>a
 
 " copy, cut and paste
 vmap <C-c> "+y
@@ -86,9 +104,12 @@ imap <S-Tab> <Esc><<i
 vmap <Tab> >gv
 vmap <S-Tab> <gv
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" marks
+noremap <Leader>m :marks<CR>
+
+"--------------------------------------------------------------------------
 " => Splits and Tabbed Files
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"--------------------------------------------------------------------------
 set splitbelow splitright
 
 " Remap splits navigation to just CTRL + hjkl
@@ -108,7 +129,35 @@ map <Leader>th <C-w>t<C-w>H
 map <Leader>tk <C-w>t<C-w>K
 
 " Removes pipes | that act as seperators on splits
-set fillchars+=vert:\ 
+set fillchars+=vert:\
+
+"--------------------------------------------------------------------------
+" Undo Tree
+"--------------------------------------------------------------------------
+
+noremap <Leader>tl :TlistToggle<CR>
+
+"--------------------------------------------------------------------------
+" Undo Tree
+"--------------------------------------------------------------------------
+
+noremap <Leader>ut :UndotreeToggle<CR>
+" noremap <Leader>utf :UndotreeFocus<CR>
+
+"--------------------------------------------------------------------------
+" Lightline
+"--------------------------------------------------------------------------
+
+let g:lightline = {
+      \ 'colorscheme': 'darcula',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead'
+      \ },
+      \ }
 
 "--------------------------------------------------------------------------
 " FZF
@@ -125,12 +174,37 @@ nmap <leader>frg :Rg<cr>
 let g:vimspector_enable_mappings = 'HUMAN'
 
 "--------------------------------------------------------------------------
+" NERD Commenter
+"--------------------------------------------------------------------------
+
+" Create default mappings
+let g:NERDCreateDefaultMappings = 1
+
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+
+" Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCommentEmptyLines = 1
+
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+
+" Enable NERDCommenterToggle to check all selected lines is commented or not 
+let g:NERDToggleCheckAllLines = 1
+
+"--------------------------------------------------------------------------
 " NERD Tree
 "--------------------------------------------------------------------------
 
 "nnoremap <leader>nf :NERDTreeFocus<CR>
-"nnoremap <C-n> :NERDTree<CR>
-nnoremap <leader>n :NERDTreeToggle<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <leader>nt :NERDTreeToggle<CR>
 nnoremap <leader>nf :NERDTreeFind<CR>
 
 " Close the tree on file open
@@ -141,25 +215,6 @@ let NERDTreeQuitOnOpen=1
 "--------------------------------------------------------------------------
 
 nnoremap <leader>u :UndotreeShow<CR>
-
-"--------------------------------------------------------------------------
-" File browsing
-"--------------------------------------------------------------------------
-
-let g:floaterm_position = 'bottom'
-let g:floaterm_width = 1.0
-let g:floaterm_height = 0.4
-
-nmap <c-t> :FloatermNew fff<cr>
-
-nnoremap <c-j> <c-w>j
-nnoremap <c-h> <c-w>h
-nnoremap <c-k> <c-w>k
-nnoremap <c-l> <c-w>l
-
-" Save on Ctrl-S
-nmap <c-s> :w<CR>
-imap <c-s> <Esc>:w<CR>a
 
 "--------------------------------------------------------------------------
 "" CMAKE
@@ -175,6 +230,16 @@ nmap <leader>cmb :CMakeBuild<cr>
 "--------------------------------------------------------------------------
 
 nmap <leader>gt :GTestRunUnderCursor<cr>
+
+"--------------------------------------------------------------------------
+"" EASY ALIGN
+"--------------------------------------------------------------------------
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 
 "--------------------------------------------------------------------------
 "" CLOSE TAG
