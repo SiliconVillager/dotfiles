@@ -42,7 +42,7 @@ Plug 'https://github.com/bfrg/vim-cpp-modern'
 " CMake
 " <leader>cmg generate
 " <leader>cmb build
-Plug 'cdelledonne/vim-cmake'
+Plug 'https://github.com/cdelledonne/vim-cmake'
 
 " To sort
 Plug 'https://github.com/adelarsq/vim-matchit'
@@ -246,6 +246,7 @@ nnoremap <leader>u :UndotreeShow<CR>
 "--------------------------------------------------------------------------
 
 let g:cmake_link_compile_commands = 1
+let g:cmake_build_type = "Debug"
 
 nmap <leader>cmg :CMakeGenerate<cr>
 nmap <leader>cmb :CMakeBuild<cr>
