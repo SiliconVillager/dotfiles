@@ -39,13 +39,17 @@ Plug 'https://github.com/vim-scripts/taglist.vim.git'
 " Better C++ highlighting
 Plug 'https://github.com/bfrg/vim-cpp-modern'
 
+" CMake
+" <leader>cmg generate
+" <leader>cmb build
+Plug 'cdelledonne/vim-cmake'
+
 " To sort
 Plug 'https://github.com/adelarsq/vim-matchit'
 Plug 'frazrepo/vim-rainbow'
 Plug 'https://github.com/airblade/vim-gitgutter.git'
 Plug 'https://github.com/mileszs/ack.vim.git'
 Plug 'https://github.com/tpope/vim-fugitive.git'
-Plug 'cdelledonne/vim-cmake'
 Plug 'antoinemadec/FixCursorHold.nvim'
 Plug 'alepez/vim-gtest'
 Plug 'majutsushi/tagbar'
