@@ -33,6 +33,7 @@ Plug 'https://github.com/junegunn/fzf.vim'
 Plug 'mbbill/undotree'
 
 " Tag List
+" <leader>tl
 Plug 'https://github.com/vim-scripts/taglist.vim.git'
 
 " To sort
