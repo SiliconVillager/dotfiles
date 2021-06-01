@@ -36,6 +36,9 @@ Plug 'mbbill/undotree'
 " <leader>tl
 Plug 'https://github.com/vim-scripts/taglist.vim.git'
 
+" Better C++ highlighting
+Plug 'https://github.com/bfrg/vim-cpp-modern'
+
 " To sort
 Plug 'https://github.com/adelarsq/vim-matchit'
 Plug 'frazrepo/vim-rainbow'
@@ -131,6 +134,23 @@ map <Leader>tk <C-w>t<C-w>K
 
 " Removes pipes | that act as seperators on splits
 set fillchars+=vert:\
+
+"--------------------------------------------------------------------------
+" CPP Modern
+"--------------------------------------------------------------------------
+
+" Disable function highlighting (affects both C and C++ files)
+let g:cpp_no_function_highlight = 0
+
+" Enable highlighting of C++11 attributes
+let g:cpp_attributes_highlight = 1
+
+" Highlight struct/class member variables (affects both C and C++ files)
+let g:cpp_member_highlight = 1
+
+" Put all standard C and C++ keywords under Vim's highlight group 'Statement'
+" (affects both C and C++ files)
+let g:cpp_simple_highlight = 1
 
 "--------------------------------------------------------------------------
 " Undo Tree
