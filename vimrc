@@ -14,8 +14,10 @@ Plug 'https://github.com/preservim/nerdcommenter'
 
 " Lightline
 Plug 'itchyny/lightline.vim'
+
 " CoC
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 " Dracula theme
 Plug 'dracula/vim', { 'as': 'dracula' }
 
@@ -34,6 +36,8 @@ Plug 'mbbill/undotree'
 
 " Better C++ highlighting
 Plug 'https://github.com/bfrg/vim-cpp-modern'
+" C++ header/cpp switch
+Plug 'https://github.com/derekwyatt/vim-fswitch'
 
 " CMake
 " <leader>cmg generate
@@ -104,6 +108,7 @@ let mapleader=" "
 syntax enable
 filetype plugin indent on
 
+set autoread
 set laststatus=2
 set updatetime=200
 set timeoutlen=600
@@ -138,12 +143,13 @@ nmap <S-Left> b
 imap <S-Right> <Esc><Right>wi
 nmap <S-Right> w
 
+" Careful with Tab remapping - the default jump shortcut stops working
 " indent/unindent with tab/shift-tab
-nmap <Tab> >>
-nmap <S-tab> <<
-imap <S-Tab> <Esc><<i
-vmap <Tab> >gv
-vmap <S-Tab> <gv
+" nmap <Tab> >>
+" nmap <S-tab> <<
+" imap <S-Tab> <Esc><<i
+" vmap <Tab> >gv
+" vmap <S-Tab> <gv
 
 " marks
 noremap <Leader>m :marks<CR>
@@ -171,6 +177,37 @@ map <Leader>tk <C-w>t<C-w>K
 
 " Removes pipes | that act as seperators on splits
 set fillchars+=vert:\
+
+"--------------------------------------------------------------------------
+" FSwitch
+"--------------------------------------------------------------------------
+
+" Switch to the file and load it into the current window >
+noremap <silent> <Leader>ko :FSHere<cr>
+
+" Switch to the file and load it into the window on the right >
+noremap <silent> <Leader>kor :FSRight<cr>
+
+" Switch to the file and load it into a new window split on the right >
+noremap <silent> <Leader>kors :FSSplitRight<cr>
+
+" Switch to the file and load it into the window on the left >
+noremap <silent> <Leader>kol :FSLeft<cr>
+
+" Switch to the file and load it into a new window split on the left >
+noremap <silent> <Leader>kols :FSSplitLeft<cr>
+
+" Switch to the file and load it into the window above >
+noremap <silent> <Leader>koa :FSAbove<cr>
+
+" Switch to the file and load it into a new window split above >
+noremap <silent> <Leader>koas :FSSplitAbove<cr>
+
+" Switch to the file and load it into the window below >
+noremap <silent> <Leader>kob :FSBelow<cr>
+
+" Switch to the file and load it into a new window split below >
+noremap <silent> <Leader>kobs :FSSplitBelow<cr>
 
 "--------------------------------------------------------------------------
 " Rainbow
@@ -322,6 +359,7 @@ nnoremap <leader>u :UndotreeShow<CR>
 let g:cmake_build_dir_location = "./build"
 let g:cmake_build_options = ["-- -j $CMAKE_Swift_NUM_THREADS"]
 let g:cmake_default_config = "Debug"
+let g:cmake_link_compile_commands = 1
 
 nmap <leader>cmg :CMakeGenerate<cr>
 nmap <leader>cmb :CMakeBuild<cr>
@@ -450,6 +488,8 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+nmap <silent> grn <Plug>(coc-rename)
+nmap <silent> grf <Plug>(coc-refactor)
 
 nnoremap <leader>prw :CocSearch <C-R>=expand("<cword>")<CR><CR>
 
@@ -469,12 +509,9 @@ endfunction
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
-" Symbol renaming.
-nmap <leader>rn <Plug>(coc-rename)
-
 " Formatting selected code.
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+xmap <leader>gf  <Plug>(coc-format-selected)
+nmap <leader>gf  <Plug>(coc-format-selected)
 
 augroup mygroup
   autocmd!
@@ -486,13 +523,13 @@ augroup end
 
 " Applying codeAction to the selected region.
 " Example: `<leader>aap` for current paragraph
-xmap <leader>a  <Plug>(coc-codeaction-selected)
-nmap <leader>a  <Plug>(coc-codeaction-selected)
+xmap <leader>ga  <Plug>(coc-codeaction-selected)
+nmap <leader>ga  <Plug>(coc-codeaction-selected)
 
 " Remap keys for applying codeAction to the current buffer.
-nmap <leader>ac  <Plug>(coc-codeaction)
+nmap <leader>gac  <Plug>(coc-codeaction)
 " Apply AutoFix to problem on the current line.
-nmap <leader>qf  <Plug>(coc-fix-current)
+nmap <leader>gqf  <Plug>(coc-fix-current)
 
 " Map function and class text objects
 " NOTE: Requires 'textDocument.documentSymbol' support from the language server.
@@ -536,21 +573,21 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Mappings for CoCList
 " Show all diagnostics.
-nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
+nnoremap <silent><nowait> <A-a>  :<C-u>CocList diagnostics<cr>
 " Manage extensions.
-nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
+" nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
 " Show commands.
-nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
+" nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
 " Find symbol of current document.
-nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
+nnoremap <silent><nowait> <A-m>  :<C-u>CocList outline<cr>
 " Search workspace symbols.
-nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
+nnoremap <silent><nowait> <A-s>  :<C-u>CocList -I symbols<cr>
 " Do default action for next item.
-nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
+" nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 " Do default action for previous item.
-nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
+" nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
-nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+" nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 "--------------------------------------------------------------------------
 " CLOSETAG
