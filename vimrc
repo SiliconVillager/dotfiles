@@ -75,7 +75,7 @@ Plug 'maxmellon/vim-jsx-pretty'
 " <leader>di
 " <leader>dr 
 " <leader>du/dd
-Plug 'puremourning/vimspector'
+Plug 'https://github.com/puremourning/vimspector'
 
 " To sort
 Plug 'Raimondi/delimitMate'
@@ -297,11 +297,12 @@ nnoremap <leader>u :UndotreeShow<CR>
 "" CMAKE
 "--------------------------------------------------------------------------
 
-let g:cmake_link_compile_commands = 1
-let g:cmake_build_type = "Debug"
+let g:cmake_build_dir_location = "./build"
+let g:cmake_build_options = ["-- -j $CMAKE_Swift_NUM_THREADS"]
 
 nmap <leader>cmg :CMakeGenerate<cr>
 nmap <leader>cmb :CMakeBuild<cr>
+nmap <leader>cmc :CMakeClean<cr>
 
 "--------------------------------------------------------------------------
 "" GTEST
