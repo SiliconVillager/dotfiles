@@ -208,6 +208,9 @@ alias mirrord="sudo reflector --latest 50 --number 20 --sort delay --save /etc/p
 alias mirrors="sudo reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist"
 alias mirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist"
 
+# clang-format
+alias clformat='find . -name "*.cpp" -o -name "*.c" -o -name "*.h"|xargs -I {} clang-format -i --verbose {}'
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # >>> conda initialize >>>

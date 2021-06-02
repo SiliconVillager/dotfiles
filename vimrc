@@ -84,6 +84,11 @@ Plug 'Raimondi/delimitMate'
 " Auto-close tags
 Plug 'alvan/vim-closetag'
 
+" Telescope
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+
 call plug#end()
 
 " Theme
@@ -304,6 +309,7 @@ nnoremap <leader>u :UndotreeShow<CR>
 
 let g:cmake_build_dir_location = "./build"
 let g:cmake_build_options = ["-- -j $CMAKE_Swift_NUM_THREADS"]
+let g:cmake_default_config = "Debug"
 
 nmap <leader>cmg :CMakeGenerate<cr>
 nmap <leader>cmb :CMakeBuild<cr>
