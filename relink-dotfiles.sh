@@ -11,3 +11,7 @@ ln -s ~/dotfiles/zshrc ~/.zshrc
 # vim
 rm ~/.vimrc
 ln -s ~/dotfiles/vimrc ~/.vimrc
+
+# vimspector
+rm ~/.vimspector.json
+ln -s ~/dotfiles/vimspector.json ~/.vimspector.json
