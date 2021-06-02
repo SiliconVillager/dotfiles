@@ -237,10 +237,18 @@ let g:lightline = {
       \ }
 
 "--------------------------------------------------------------------------
+" Telescope
+"--------------------------------------------------------------------------
+
+nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
+
+"--------------------------------------------------------------------------
 " FZF
 "--------------------------------------------------------------------------
 
-nmap <leader>ff :Files<cr>
+nmap <leader>fzf :Files<cr>
 nmap <leader>fag :Ag<cr>
 nmap <leader>frg :Rg<cr>
 
