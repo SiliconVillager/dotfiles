@@ -75,6 +75,7 @@ Plug 'maxmellon/vim-jsx-pretty'
 " <leader>di
 " <leader>dr 
 " <leader>du/dd
+" <leader>dw expression
 Plug 'https://github.com/puremourning/vimspector'
 
 " To sort
@@ -94,7 +95,7 @@ filetype plugin indent on
 
 set laststatus=2
 set updatetime=200
-set timeoutlen=400
+set timeoutlen=600
 set number
 set ruler
 
@@ -249,6 +250,8 @@ xmap <Leader>di <Plug>VimspectorBalloonEval
 
 nmap <leader>du <Plug>VimspectorUpFrame
 nmap <leader>dd <Plug>VimspectorDownFrame
+
+nmap <leader>dw :VimspectorWatch 
 
 "--------------------------------------------------------------------------
 " NERD Commenter
