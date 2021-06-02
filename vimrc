@@ -78,10 +78,12 @@ Plug 'maxmellon/vim-jsx-pretty'
 " <leader>dw expression
 Plug 'https://github.com/puremourning/vimspector'
 
-" To sort
+" Auto-close brackets
 Plug 'Raimondi/delimitMate'
-Plug 'tpope/vim-surround'
+
+" Auto-close tags
 Plug 'alvan/vim-closetag'
+
 call plug#end()
 
 " Theme
