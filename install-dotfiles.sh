@@ -30,3 +30,6 @@ ln -s ~/dotfiles/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
 
 #----------------------------------------------------------------------------
 
+# backgrounds
+rm -rf ~/.local/share/backgrounds
+ln -s ~/dotfiles/backgrounds ~/.local/share/backgrounds
