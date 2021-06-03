@@ -1,5 +1,5 @@
-require("theprimeagen.telescope")
-require("theprimeagen.git-worktree")
+require("tomas.telescope")
+require("tomas.git-worktree")
 
 P = function(v)
   print(vim.inspect(v))

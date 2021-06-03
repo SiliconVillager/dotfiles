@@ -58,6 +58,9 @@ Plug 'https://github.com/airblade/vim-gitgutter.git'
 " :Git diff
 Plug 'https://github.com/tpope/vim-fugitive.git'
 
+" Git worktree support
+Plug 'ThePrimeagen/git-worktree.nvim'
+
 " Cursor hold performance
 Plug 'antoinemadec/FixCursorHold.nvim'
 
