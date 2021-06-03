@@ -1,108 +1,36 @@
 call plug#begin('~/.vim/plugged')
-
-" NERD Tree
-" <C-n> or <leader>nt
-" <leader>nf
 Plug 'https://github.com/scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-
-" NERD Commenter
-" <leader>cc comment
-" <leader>cu uncomment
-" <leader>cs sexy block
-" <leader>cy yank and comment
 Plug 'https://github.com/preservim/nerdcommenter'
-
-" Lightline
 Plug 'itchyny/lightline.vim'
-
-" CoC
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-" Dracula theme
 Plug 'dracula/vim', { 'as': 'dracula' }
-
-" Easy align
-" selection -> ga= (example)
 Plug 'https://github.com/junegunn/vim-easy-align'
-
-" FZF
-" <leader>ff <leader>fag <leader>rag
 Plug 'https://github.com/junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'https://github.com/junegunn/fzf.vim'
-
-" Undo Tree
-" <leader>ut
 Plug 'mbbill/undotree'
-
-" Better C++ highlighting
 Plug 'https://github.com/bfrg/vim-cpp-modern'
-" C++ header/cpp switch
 Plug 'https://github.com/derekwyatt/vim-fswitch'
-
-" CMake
-" <leader>cmg generate
-" <leader>cmb build
 Plug 'https://github.com/cdelledonne/vim-cmake'
-
-" Improved behavior of %
 Plug 'https://github.com/adelarsq/vim-matchit'
-
-" Bracket colors
 Plug 'frazrepo/vim-rainbow'
-
-" Nice git visualization
 Plug 'https://github.com/airblade/vim-gitgutter.git'
-
-" Git wrapper
-" :Git
-" :Git diff
 Plug 'https://github.com/tpope/vim-fugitive.git'
-
-" Git worktree support
 Plug 'ThePrimeagen/git-worktree.nvim'
-
-" Cursor hold performance
 Plug 'antoinemadec/FixCursorHold.nvim'
-
-" GTest integration
 Plug 'alepez/vim-gtest'
-
-" Tagbar
-" <leader>tb
 Plug 'majutsushi/tagbar'
-
-" Python support
 Plug 'vim-scripts/indentpython.vim'
-
-" JS support
 Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
-
-" Debugger
-" <leader>di
-" <leader>dr 
-" <leader>du/dd
-" <leader>dw expression
 Plug 'https://github.com/puremourning/vimspector'
-
-" Auto-close brackets
 Plug 'Raimondi/delimitMate'
-
-" Auto-close tags
 Plug 'alvan/vim-closetag'
-
-" Telescope
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
-
-" GLSL Support
 Plug 'https://github.com/tikhomirov/vim-glsl'
-
-" Buffer killer
 Plug 'https://github.com/Asheq/close-buffers.vim'
-
 call plug#end()
 
 " lua modules
@@ -165,7 +93,7 @@ nmap <S-Right> w
 noremap <Leader>m :marks<CR>
 
 "--------------------------------------------------------------------------
-" => Splits and Tabbed Files
+" Splits and Tabbed Files
 "--------------------------------------------------------------------------
 set splitbelow splitright
 
@@ -184,31 +112,4 @@ noremap <silent> <C-Down> :resize -3<CR>
 " Change 2 split windows from vert to horiz or horiz to vert
 map <Leader>th <C-w>t<C-w>H
 map <Leader>tk <C-w>t<C-w>K
-
-" Removes pipes | that act as seperators on splits
-set fillchars+=vert:\
-
-"--------------------------------------------------------------------------
-" NERD Tree
-"--------------------------------------------------------------------------
-
-"nnoremap <leader>nf :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
-nnoremap <leader>nt :NERDTreeToggle<CR>
-nnoremap <leader>nf :NERDTreeFind<CR>
-
-" Close the tree on file open
-let NERDTreeQuitOnOpen=1
-
-"--------------------------------------------------------------------------
-" Undo Tree
-"--------------------------------------------------------------------------
-
-nnoremap <leader>u :UndotreeShow<CR>
-
-"--------------------------------------------------------------------------
-"" GTEST
-"--------------------------------------------------------------------------
-
-nmap <leader>gt :GTestRunUnderCursor<cr>
 
