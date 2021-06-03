@@ -189,42 +189,6 @@ map <Leader>tk <C-w>t<C-w>K
 set fillchars+=vert:\
 
 "--------------------------------------------------------------------------
-" Tagbar 
-"--------------------------------------------------------------------------
-
-noremap <Leader>tb :TagbarToggle<CR>
-
-"--------------------------------------------------------------------------
-" Undo Tree
-"--------------------------------------------------------------------------
-
-noremap <Leader>ut :UndotreeToggle<CR>
-" noremap <Leader>utf :UndotreeFocus<CR>
-
-"--------------------------------------------------------------------------
-" Lightline
-"--------------------------------------------------------------------------
-
-let g:lightline = {
-      \ 'colorscheme': 'darcula',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'FugitiveHead'
-      \ },
-      \ }
-
-"--------------------------------------------------------------------------
-" FZF
-"--------------------------------------------------------------------------
-
-nmap <leader>fzf :Files<cr>
-nmap <leader>fag :Ag<cr>
-nmap <leader>frg :Rg<cr>
-
-"--------------------------------------------------------------------------
 " VIMSCPECTOR
 "--------------------------------------------------------------------------
 
@@ -286,19 +250,6 @@ let NERDTreeQuitOnOpen=1
 "--------------------------------------------------------------------------
 
 nnoremap <leader>u :UndotreeShow<CR>
-
-"--------------------------------------------------------------------------
-"" CMAKE
-"--------------------------------------------------------------------------
-
-let g:cmake_build_dir_location = "./build"
-let g:cmake_build_options = ["-- -j $CMAKE_Swift_NUM_THREADS"]
-let g:cmake_default_config = "Debug"
-let g:cmake_link_compile_commands = 1
-
-nmap <leader>cmg :CMakeGenerate<cr>
-nmap <leader>cmb :CMakeBuild<cr>
-nmap <leader>cmc :CMakeClean<cr>
 
 "--------------------------------------------------------------------------
 "" GTEST
