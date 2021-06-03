@@ -15,5 +15,6 @@ nnoremap <leader>tw :lua require('tomas.telescope').wallpaper_selector()<CR>
 " Git stuff
 nnoremap <leader>tg :lua require('telescope.builtin').git_files()<CR>
 nnoremap <leader>tgb :lua require('tomas.telescope').git_branches()<CR>
+nnoremap <leader>tgs :lua require('telescope.builtin').git_status()<CR>
 nnoremap <leader>tgw :lua require('telescope').extensions.git_worktree.git_worktrees()<CR>
 nnoremap <leader>tgwc :lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>
