@@ -100,6 +100,9 @@ Plug 'nvim-telescope/telescope-fzy-native.nvim'
 " GLSL Support
 Plug 'https://github.com/tikhomirov/vim-glsl'
 
+" Buffer killer
+Plug 'https://github.com/Asheq/close-buffers.vim'
+
 call plug#end()
 
 " lua modules
