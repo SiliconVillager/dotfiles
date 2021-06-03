@@ -31,6 +31,7 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'https://github.com/tikhomirov/vim-glsl'
 Plug 'https://github.com/Asheq/close-buffers.vim'
+Plug 'MattesGroeger/vim-bookmarks'
 call plug#end()
 
 " lua modules
@@ -64,6 +65,11 @@ set softtabstop=2
 set shiftwidth=2
 set smarttab
 set expandtab
+
+" Edit vimr configuration file
+nnoremap <Leader>vce :e $MYVIMRC<CR>
+" " Reload vimr configuration file
+nnoremap <Leader>vcr :source $MYVIMRC<CR>
 
 " Save on Ctrl-S
 nmap <c-s> :w<CR>
