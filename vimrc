@@ -99,8 +99,12 @@ Plug 'https://github.com/tikhomirov/vim-glsl'
 
 call plug#end()
 
+" lua modules
+lua require("tomas")
+
 " Theme
 colorscheme dracula
+let g:dracula_colorterm = 0
 
 " Leader
 let mapleader=" "
@@ -111,7 +115,7 @@ filetype plugin indent on
 set autoread
 set laststatus=2
 set updatetime=200
-set timeoutlen=600
+set timeoutlen=1000
 set number
 set ruler
 
