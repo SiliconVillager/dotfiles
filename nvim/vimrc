@@ -99,6 +99,16 @@ nmap <S-Right> w
 noremap <Leader>m :marks<CR>
 
 "--------------------------------------------------------------------------
+" QFList mappings
+"--------------------------------------------------------------------------
+
+nnoremap <A-[> :cprev<cr>
+nnoremap <A-]> :cnext<cr>
+nnoremap <A-o> :copen<cr>
+nnoremap <A-O> :cclose<cr>
+nnoremap <A-f> :cfirst<cr>
+
+"--------------------------------------------------------------------------
 " Splits and Tabbed Files
 "--------------------------------------------------------------------------
 set splitbelow splitright
