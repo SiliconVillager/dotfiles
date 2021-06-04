@@ -33,3 +33,12 @@ ln -s ~/dotfiles/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
 # backgrounds
 rm -rf ~/.local/share/backgrounds
 ln -s ~/dotfiles/backgrounds ~/.local/share/backgrounds
+
+# mc
+rm ~/.config/mc/ini
+ln -s ~/dotfiles/config/mc/ini ~/.config/mc/ini
+
+# alacritty
+rm -rf ~/.config/alacritty
+ln -s ~/dotfiles/config/alacritty ~/.config/alacritty
+

@@ -213,7 +213,8 @@ alias clformat='find . -name "*.cpp" -o -name "*.c" -o -name "*.h"|xargs -I {} c
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export CMAKE_NUM_THREADS=16
+export CMAKE_NUM_THREADS=8
+export TERM=xterm-256color
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
