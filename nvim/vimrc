@@ -69,7 +69,7 @@ set expandtab
 " Edit vimr configuration file
 nnoremap <Leader>vce :e $MYVIMRC<CR>
 " " Reload vimr configuration file
-nnoremap <Leader>vcr :source $MYVIMRC<CR>
+nnoremap <Leader>vcr :source ~/.config/nvim/init.vim<CR>
 
 " Save on Ctrl-S
 nmap <c-s> :w<CR>

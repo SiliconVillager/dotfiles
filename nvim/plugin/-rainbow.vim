@@ -2,10 +2,10 @@
 " Rainbow
 "--------------------------------------------------------------------------
 
-" nmap <leader>rt :RainbowToggle<CR>
+" nmap <leader>rbt :RainbowToggle<CR>
 " nmap <leader>rl :RainbowLoad<CR>
 
-let g:rainbow_active = 1
+let g:rainbow_active = 0
 
 let g:rainbow_load_separately = [
     \ [ '*' , [['(', ')'], ['\[', '\]'], ['{', '}']] ],
