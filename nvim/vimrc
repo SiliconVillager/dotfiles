@@ -72,8 +72,8 @@ nnoremap <Leader>vce :e $MYVIMRC<CR>
 nnoremap <Leader>vcr :source ~/.config/nvim/init.vim<CR>
 
 " Save on Ctrl-S
-nmap <c-s> :w<CR>
-imap <c-s> <Esc>:w<CR>a
+nmap <c-s> :wa<CR>
+imap <c-s> <Esc>:wa<CR>a
 
 " copy, cut and paste
 vmap <C-c> "+y
