@@ -32,6 +32,7 @@ Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'https://github.com/tikhomirov/vim-glsl'
 Plug 'https://github.com/Asheq/close-buffers.vim'
 Plug 'MattesGroeger/vim-bookmarks'
+Plug 'szw/vim-maximizer'
 call plug#end()
 
 " lua modules
