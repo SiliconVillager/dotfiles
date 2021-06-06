@@ -14,4 +14,5 @@ let g:cmake_link_compile_commands = 1
 nmap <leader>cmg :CMakeGenerate<cr>
 nmap <leader>cmb :CMakeBuild<cr>
 nmap <leader>cmc :CMakeClean<cr>
+nmap <leader>cmx :CMakeClose<cr>
 
