@@ -70,6 +70,8 @@ set shiftwidth=2
 set smarttab
 set expandtab
 
+:map <F4> :nohl<CR>
+
 " Edit vimr configuration file
 nnoremap <Leader>vce :e $MYVIMRC<CR>
 " " Reload vimr configuration file
