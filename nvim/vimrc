@@ -34,6 +34,8 @@ Plug 'https://github.com/Asheq/close-buffers.vim'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'szw/vim-maximizer'
 Plug 'https://github.com/vim-scripts/DoxygenToolkit.vim'
+Plug 'https://github.com/vim-scripts/a.vim'
+Plug 'https://github.com/tenfyzhong/vim-gencode-cpp'
 call plug#end()
 
 " lua modules
