@@ -42,3 +42,7 @@ ln -s ~/dotfiles/config/mc/ini ~/.config/mc/ini
 rm -rf ~/.config/alacritty
 ln -s ~/dotfiles/config/alacritty ~/.config/alacritty
 
+# kitty
+rm -rf ~/.config/kitty
+ln -s ~/dotfiles/config/kitty ~/.config/kitty
+
