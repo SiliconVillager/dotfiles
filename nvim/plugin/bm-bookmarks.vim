@@ -8,9 +8,9 @@ let g:bookmark_auto_save_file = '.bookmarks'
 
 nmap <Leader><Leader> <Plug>BookmarkToggle
 nmap <Leader><Leader>a <Plug>BookmarkAnnotate
-nmap <Leader>bml <Plug>BookmarkShowAll
-nmap <Leader>bm] <Plug>BookmarkNext
-nmap <Leader>bm[ <Plug>BookmarkPrev
+nmap <Leader><Leader>l <Plug>BookmarkShowAll
+nmap <Leader><Leader>] <Plug>BookmarkNext
+nmap <Leader><Leader>[ <Plug>BookmarkPrev
 nmap <Leader>bmr <Plug>BookmarkClear
 nmap <Leader>bmc <Plug>BookmarkClearAll
 " nmap <Leader>bmu <Plug>BookmarkMoveUp
