@@ -2,6 +2,6 @@
 " Undo Tree
 "--------------------------------------------------------------------------
 
-noremap <Leader>utt :UndotreeToggle<CR>
-noremap <Leader>utf :UndotreeFocus<CR>
+noremap <Leader>ut :UndotreeToggle<CR>
+" noremap <Leader>utf :UndotreeFocus<CR>
 
