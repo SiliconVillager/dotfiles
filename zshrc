@@ -215,6 +215,8 @@ alias clformat='find . -name "*.cpp" -o -name "*.c" -o -name "*.h"|xargs -I {} c
 
 export TERM=xterm-256color
 
+# Anaconda
+if test -f "/home/tomas/anaconda3/bin/conda"; then
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/tomas/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
@@ -230,4 +232,4 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 conda deactivate
-
+fi
