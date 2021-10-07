@@ -35,8 +35,11 @@ Plug 'MattesGroeger/vim-bookmarks'
 Plug 'szw/vim-maximizer'
 Plug 'https://github.com/vim-scripts/DoxygenToolkit.vim'
 Plug 'https://github.com/rhysd/vim-clang-format'
+Plug 'https://github.com/honza/vim-snippets'
+Plug 'https://github.com/SirVer/ultisnips'
 "Plug 'https://github.com/vim-scripts/a.vim'
 "Plug 'https://github.com/tenfyzhong/vim-gencode-cpp'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
 
 " lua modules
