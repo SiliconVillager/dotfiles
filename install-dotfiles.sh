@@ -8,6 +8,11 @@ ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
 rm ~/.zshrc
 ln -s ~/dotfiles/zshrc ~/.zshrc
 
+# i3
+rm ~/.config/i3/config
+mkdir ~/.config/i3
+ln -s ~/dotfiles/config/i3/config ~/.config/i3/config
+
 #----------------------------------------------------------------------------
 # nvim
 
