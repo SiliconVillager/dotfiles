@@ -40,6 +40,7 @@ Plug 'https://github.com/SirVer/ultisnips'
 "Plug 'https://github.com/vim-scripts/a.vim'
 "Plug 'https://github.com/tenfyzhong/vim-gencode-cpp'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/playground'
 Plug 'xiyaowong/nvim-transparent'
 call plug#end()
 
