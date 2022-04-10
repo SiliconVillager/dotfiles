@@ -42,6 +42,7 @@ Plug 'https://github.com/SirVer/ultisnips'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
 Plug 'xiyaowong/nvim-transparent'
+Plug 'github/copilot.vim'
 call plug#end()
 
 " lua modules
