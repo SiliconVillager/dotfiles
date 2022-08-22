@@ -49,9 +49,9 @@ call plug#end()
 lua require("tomas")
 
 " Theme
-colorscheme dracula
+"colorscheme dracula
 " Enables transparent background
-let g:dracula_colorterm = 0
+"let g:dracula_colorterm = 0
 
 " Leader
 let mapleader=" "
