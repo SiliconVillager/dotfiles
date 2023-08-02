@@ -1,1 +1,1 @@
-let g:transparent_enabled = v:true
+" let g:transparent_enabled = v:true

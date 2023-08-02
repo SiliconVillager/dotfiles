@@ -12,6 +12,9 @@ nnoremap <leader>tb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>tdf :lua require('tomas.telescope').search_dotfiles()<CR>
 nnoremap <leader>tw :lua require('tomas.telescope').wallpaper_selector()<CR>
 
+" File browser
+nnoremap <leader>tb :lua require('telescope').extensions.file_browser.file_browser()<CR>
+
 " Git stuff
 nnoremap <leader>tg :lua require('telescope.builtin').git_files()<CR>
 nnoremap <leader>tgb :lua require('tomas.telescope').git_branches()<CR>

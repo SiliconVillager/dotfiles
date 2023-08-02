@@ -19,19 +19,14 @@ Plug 'ThePrimeagen/git-worktree.nvim'
 Plug 'antoinemadec/FixCursorHold.nvim'
 Plug 'alepez/vim-gtest'
 Plug 'majutsushi/tagbar'
-Plug 'vim-scripts/indentpython.vim'
-Plug 'pangloss/vim-javascript'
-Plug 'maxmellon/vim-jsx-pretty'
 Plug 'https://github.com/puremourning/vimspector'
-Plug 'Raimondi/delimitMate'
 Plug 'alvan/vim-closetag'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-file-browser.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
-Plug 'https://github.com/tikhomirov/vim-glsl'
 Plug 'https://github.com/Asheq/close-buffers.vim'
-" Plug 'MattesGroeger/vim-bookmarks'
 Plug 'szw/vim-maximizer'
 Plug 'https://github.com/vim-scripts/DoxygenToolkit.vim'
 Plug 'https://github.com/rhysd/vim-clang-format'
@@ -51,7 +46,7 @@ lua require("tomas")
 " Theme
 colorscheme dracula
 " Enables transparent background
-let g:dracula_colorterm = 0
+" let g:dracula_colorterm = 0
 
 " Leader
 let mapleader=" "
