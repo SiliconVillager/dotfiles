@@ -7,6 +7,7 @@ ln -s ~/dotfiles/tmux.conf ~/.tmux.conf
 #zsh
 rm ~/.zshrc
 ln -s ~/dotfiles/zshrc ~/.zshrc
+sed -i 's|export ZSH="/home/tomas/.oh-my-zsh"|export ZSH="$HOME/.oh-my-zsh"|' ~/.zshrc
 
 # i3
 rm ~/.config/i3/config
