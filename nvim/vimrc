@@ -1,52 +1,27 @@
 call plug#begin('~/.vim/plugged')
-Plug 'https://github.com/scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'https://github.com/preservim/nerdcommenter'
 Plug 'itchyny/lightline.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'https://github.com/junegunn/vim-easy-align'
 Plug 'https://github.com/junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'https://github.com/junegunn/fzf.vim'
 Plug 'mbbill/undotree'
-Plug 'https://github.com/bfrg/vim-cpp-modern'
-Plug 'https://github.com/derekwyatt/vim-fswitch'
-Plug 'https://github.com/cdelledonne/vim-cmake'
-Plug 'https://github.com/adelarsq/vim-matchit'
-Plug 'frazrepo/vim-rainbow'
 Plug 'https://github.com/airblade/vim-gitgutter.git'
-Plug 'https://github.com/tpope/vim-fugitive.git'
 Plug 'ThePrimeagen/git-worktree.nvim'
 Plug 'antoinemadec/FixCursorHold.nvim'
-Plug 'alepez/vim-gtest'
 Plug 'majutsushi/tagbar'
-Plug 'https://github.com/puremourning/vimspector'
-Plug 'alvan/vim-closetag'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-file-browser.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
-Plug 'https://github.com/Asheq/close-buffers.vim'
-Plug 'szw/vim-maximizer'
-Plug 'https://github.com/vim-scripts/DoxygenToolkit.vim'
-Plug 'https://github.com/rhysd/vim-clang-format'
-Plug 'https://github.com/honza/vim-snippets'
-Plug 'https://github.com/SirVer/ultisnips'
 "Plug 'https://github.com/vim-scripts/a.vim'
-"Plug 'https://github.com/tenfyzhong/vim-gencode-cpp'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'nvim-treesitter/playground'
-Plug 'xiyaowong/nvim-transparent'
 Plug 'github/copilot.vim'
 call plug#end()
 
 " lua modules
 lua require("tomas")
-
-" Theme
-colorscheme dracula
-" Enables transparent background
-" let g:dracula_colorterm = 0
 
 " Leader
 let mapleader=" "
