@@ -15,7 +15,7 @@ return require('packer').startup(function(use)
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
 
-  --Treesitter
+  -- Treesitter
   use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
   use('nvim-treesitter/playground')
 
@@ -43,16 +43,6 @@ return require('packer').startup(function(use)
 	  end
   })
 
-  --[[
-  use({
-	  'Mofiqul/dracula.nvim',
-	  as = 'dracula',
-	  config = function()
-		  vim.cmd('colorscheme dracula')
-	  end
-  })
-  ]]
-
   -- LSP
   use {
 	  'VonHeikemen/lsp-zero.nvim',
@@ -69,20 +59,5 @@ return require('packer').startup(function(use)
 		  {'L3MON4D3/LuaSnip'},     -- Required
 	  }
   }
-
-  -- Packer
-  --[[
-  use({
-      "jackMort/ChatGPT.nvim",
-      config = function()
-          require("chatgpt").setup()
-      end,
-      requires = {
-          "MunifTanjim/nui.nvim",
-          "nvim-lua/plenary.nvim",
-          "nvim-telescope/telescope.nvim"
-      }
-  })
-  ]]
 
 end)
