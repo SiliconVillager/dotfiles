@@ -28,6 +28,9 @@ return require('packer').startup(function(use)
   -- Git
   use('tpope/vim-fugitive')
 
+  -- Copilot
+  use('github/copilot.vim')
+
   -- Theme
   use({
 	  'rose-pine/neovim',
@@ -44,6 +47,38 @@ return require('packer').startup(function(use)
 	  config = function()
 		  vim.cmd('colorscheme dracula')
 	  end
+  })
+  ]]
+
+  -- LSP
+  use {
+	  'VonHeikemen/lsp-zero.nvim',
+	  branch = 'v2.x',
+	  requires = {
+		  -- LSP Support
+		  {'neovim/nvim-lspconfig'},             -- Required
+		  {'williamboman/mason.nvim'},           -- Optional
+		  {'williamboman/mason-lspconfig.nvim'}, -- Optional
+
+		  -- Autocompletion
+		  {'hrsh7th/nvim-cmp'},     -- Required
+		  {'hrsh7th/cmp-nvim-lsp'}, -- Required
+		  {'L3MON4D3/LuaSnip'},     -- Required
+	  }
+  }
+
+  -- Packer
+  --[[
+  use({
+      "jackMort/ChatGPT.nvim",
+      config = function()
+          require("chatgpt").setup()
+      end,
+      requires = {
+          "MunifTanjim/nui.nvim",
+          "nvim-lua/plenary.nvim",
+          "nvim-telescope/telescope.nvim"
+      }
   })
   ]]
 
