@@ -34,6 +34,9 @@ return require('packer').startup(function(use)
   -- Lightline
   use('itchyny/lightline.vim')
 
+  -- Autoclose
+  use('m4xshen/autoclose.nvim')
+
   -- Theme
   use({
 	  'rose-pine/neovim',
