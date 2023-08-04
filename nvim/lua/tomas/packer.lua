@@ -31,6 +31,9 @@ return require('packer').startup(function(use)
   -- Copilot
   use('github/copilot.vim')
 
+  -- Lightline
+  use('itchyny/lightline.vim')
+
   -- Theme
   use({
 	  'rose-pine/neovim',
