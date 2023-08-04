@@ -28,9 +28,6 @@ return require('packer').startup(function(use)
   -- Git
   use('tpope/vim-fugitive')
 
-  -- Copilot
-  use('github/copilot.vim')
-
   -- Lightline
   use('itchyny/lightline.vim')
 
@@ -62,5 +59,8 @@ return require('packer').startup(function(use)
 		  {'L3MON4D3/LuaSnip'},     -- Required
 	  }
   }
+
+  -- Copilot
+  use('github/copilot.vim')
 
 end)
