@@ -33,7 +33,7 @@
 	},
 	"tray":{
 		"icon-size":18,
-		"spacing": 15
+		"spacing": 18
 	},
 	"clock": {
 		"format": "{0:%H:%M  %d/%m/%Y}"
@@ -62,7 +62,7 @@
 		"on-click": "playerctl play-pause"
 	},
 	"custom/launcher":{
-		"format": " ",
+		"format": " ",
 		"on-click": "tofi-drun",
 		"on-click-right": "killall tofi-drun"
 	},
