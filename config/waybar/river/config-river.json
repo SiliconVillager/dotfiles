@@ -1,8 +1,8 @@
 {
 	"layer": "top",
-	"modules-left": ["custom/launcher","custom/media","hyprland/workspaces"],
+	"modules-left": ["custom/leftspacer","custom/launcher","custom/media","hyprland/workspaces"],
 	"modules-center": ["cpu", "memory"],
-	"modules-right": ["tray","pulseaudio","clock","network","battery"],
+	"modules-right": ["tray","pulseaudio","network","battery","clock","custom/rightspacer"],
 
 	"pulseaudio": {
 		"tooltip": false,
@@ -36,7 +36,7 @@
 		"spacing": 18
 	},
 	"clock": {
-		"format": "{0:%H:%M  %d/%m/%Y}"
+		"format": "{0:%H:%M | %d/%m/%Y}"
 	},
 	"cpu": {
 		"interval": 15,
@@ -69,6 +69,12 @@
 	"custom/wallpaper":{
 		"format":" ",
 		"on-click": "bash ~/.config/system_scripts/pkill_bc"
+	},
+	"custom/leftspacer":{
+		"format":" "
+	},
+	"custom/rightspacer":{
+		"format":" "
 	},
 	"hyprland/workspaces": {
 		"active-only": false
