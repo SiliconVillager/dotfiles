@@ -1,10 +1,10 @@
 #!/bin/bash
 
-HYPERLAND_CONFIG_DIR=~/.config/hypr
+HYPRLAND_CONFIG_DIR=~/.config/hypr
 
-if [ -d "$HYPERLAND_CONFIG_DIR" ]; then
-	rm -rf "$HYPERLAND_CONFIG_DIR"
+if [ -d "$HYPRLAND_CONFIG_DIR" ]; then
+	rm -rf "$HYPRLAND_CONFIG_DIR"
 fi
 
-ln -s "$(pwd)" "$HYPERLAND_CONFIG_DIR"
+ln -s "$(pwd)" "$HYPRLAND_CONFIG_DIR"
 
