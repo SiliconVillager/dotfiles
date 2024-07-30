@@ -1,10 +1,7 @@
 #!/bin/bash
 
 # Delay the start of the script
-sleep 3
+sleep 5
 
 qsyncthingtray &
-
-XDG_CURRENT_DESKTOP=Sway
-flameshot &
 
