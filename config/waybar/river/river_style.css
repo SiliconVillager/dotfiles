@@ -196,7 +196,8 @@ window#waybar.hidden {
 	border-radius: 10px;
 	transition: none;
 	color: #B5E8E0;
-	background: #191724;
+	/*background: #191724;*/
+	background: transparent;
 }
 
 #custom-launcher {
