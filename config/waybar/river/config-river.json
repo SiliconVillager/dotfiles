@@ -64,7 +64,9 @@
 		"format":" "
 	},
 	"hyprland/workspaces": {
-		"active-only": false
+		"active-only": false,
+		"format": "{icon}",
+		"all-outputs": false
 	},
 	"mpris": {
 		"format": "{status_icon} {player_icon} {player}: {title}",
