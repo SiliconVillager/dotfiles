@@ -1,6 +1,6 @@
 {
 	"layer": "top",
-	"modules-left": ["custom/leftspacer","custom/launcher","cpu", "memory", "mpris"],
+	"modules-left": ["custom/leftspacer","custom/launcher", "custom/wallpaper", "cpu", "memory", "mpris"],
 	"modules-center": ["hyprland/workspaces"],
 	"modules-right": ["tray","pulseaudio","network","battery","clock","custom/rightspacer"],
 
@@ -55,7 +55,7 @@
 	},
 	"custom/wallpaper":{
 		"format":" ",
-		"on-click": "bash ~/.config/system_scripts/pkill_bc"
+		"on-click": "waypaper"
 	},
 	"custom/leftspacer":{
 		"format":" "
@@ -69,15 +69,16 @@
 		"all-outputs": false
 	},
 	"mpris": {
-		"format": "{status_icon}{player_icon} {player}: {title}",
-		"format-paused": "{status_icon} {player_icon} {player}: <i>{title}</i>",
+		"format": "{player_icon} {player}: {title} {status_icon}",
+		"format-paused": "{player_icon} {player}: <i>{title}</i> {status_icon}",
 		"player-icons": {
 			"default": " ",
 			"spotify": " ",
 			"brave": ""
 		},
 		"status-icons": {
-			"paused": "⏸"
+			"playing": " ",
+			"paused": " ⏸"
 		}
 	}
 }
