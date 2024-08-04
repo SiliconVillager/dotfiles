@@ -37,42 +37,41 @@ window#waybar.hidden {
 	margin-left: 12px;
 	font-size: 4px;
 	margin-bottom: 0px;
-	border-radius: 10px;
 	transition: none;
-	/*background: #191724;*/
+	background: #191724;
 }
 
 #workspaces button {
 	transition: none;
 	color: #e0def4;
-	/*background: transparent;*/
-	background: #191724;
+	background: transparent;
+	/*background: #191724;*/
 	font-size: 16px;
 	font-weight: bold;
 	border-radius: 2px;
 	min-width: 40px;
-	margin-right: 10px;
+	/*margin-right: 10px;*/
+	border-bottom: 2px solid #191724;
 }
 
-#workspaces button.occupied {
-	transition: none;
-	color: #F28FAD;
-	background: transparent;
-	font-size: 4px;
+#workspaces button.active {
+	color: #f6c177;
+	border-bottom: 2px solid #f6c177;
+	min-width: 38px;
 }
 
 #workspaces button.focused {
 	color: #ABE9B3;
-	border-top: 2px solid #ABE9B3;
-	border-bottom: 2px solid #ABE9B3;
+	/*border-top: 2px solid #ABE9B3;*/
+	/*border-bottom: 2px solid #ABE9B3;*/
 }
 
 #workspaces button:hover {
 	transition: none;
 	box-shadow: inherit;
 	text-shadow: inherit;
-	border-color: #f6c177;
-	border-width: 2px;
+	/*border-color: #f6c177;*/
+	/*border-width: 2px;*/
 	color: #ea9d34;
 }
 
@@ -199,7 +198,7 @@ window#waybar.hidden {
 	padding-right: 5px;
 	transition: none;
 	color: #2fba77;
-	background: #191724;
+	background: transparent;
 }
 
 #custom-power {

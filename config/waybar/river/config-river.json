@@ -1,7 +1,7 @@
 {
 	"layer": "top",
-	"modules-left": ["custom/leftspacer","custom/launcher","hyprland/workspaces", "mpris"],
-	"modules-center": ["cpu", "memory"],
+	"modules-left": ["custom/leftspacer","custom/launcher","cpu", "memory", "mpris"],
+	"modules-center": ["hyprland/workspaces"],
 	"modules-right": ["tray","pulseaudio","network","battery","clock","custom/rightspacer"],
 
 	"pulseaudio": {
