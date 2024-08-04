@@ -1,6 +1,6 @@
 {
 	"layer": "top",
-	"modules-left": ["custom/leftspacer","custom/launcher","custom/media","hyprland/workspaces"],
+	"modules-left": ["custom/leftspacer","custom/launcher","hyprland/workspaces", "mpris"],
 	"modules-center": ["cpu", "memory"],
 	"modules-right": ["tray","pulseaudio","network","battery","clock","custom/rightspacer"],
 
@@ -48,19 +48,6 @@
 		"format": " {}%",
 		"max-length": 10
 	},
-	"custom/media": {
-		"interval": 30,
-		"format": "{icon} {}",
-		"return-type": "json",
-		"max-length": 20,
-		"format-icons": {
-			"spotify": " ",
-			"default": " "
-		},
-		"escape": true,
-		"exec": "$HOME/.config/system_scripts/mediaplayer.py 2> /dev/null",
-		"on-click": "playerctl play-pause"
-	},
 	"custom/launcher":{
 		"format": " ",
 		"on-click": "tofi-drun",
@@ -78,5 +65,18 @@
 	},
 	"hyprland/workspaces": {
 		"active-only": false
+	},
+	"mpris": {
+		"format": "{status_icon} {player_icon} {player}: {title}",
+		"format-paused": "{status_icon} {player_icon} {player}: <i>{title}</i>",
+		"player-icons": {
+			"default": " ",
+			"spotify": " ",
+			"brave": ""
+		},
+		"status-icons": {
+			"paused": "⏸",
+			"playing": ""
+		}
 	}
 }
