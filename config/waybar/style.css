@@ -54,14 +54,15 @@ window#waybar.hidden {
 	border-bottom: 2px solid #191724;
 }
 
-#workspaces button.active {
+#workspaces button.active.visible {
 	color: #f6c177;
 	border-bottom: 2px solid #f6c177;
 	min-width: 38px;
 }
 
-#workspaces button.focused {
+#workspaces button.visible {
 	color: #ABE9B3;
+	border-bottom: 2px solid #ebbcba;
 	/*border-top: 2px solid #ABE9B3;*/
 	/*border-bottom: 2px solid #ABE9B3;*/
 }
