@@ -7,9 +7,10 @@
 	"pulseaudio": {
 		"tooltip": false,
 		"scroll-step": 1,
-		"format": "{icon} {volume}%",
-		"format-muted": "{icon} {volume}%",
+		"format": "{icon} {volume}% ({desc})",
+		"format-muted": "{icon} Muted",
 		"on-click":"pactl set-sink-mute @DEFAULT_SINK@ toggle",
+		"on-click-right":"pavucontrol",
 		"format-icons": {
 			"default": ["", "", ""]
 		}
@@ -54,7 +55,7 @@
 		"on-click-right": "killall tofi-drun"
 	},
 	"custom/wallpaper":{
-		"format":" ",
+		"format":"",
 		"on-click": "waypaper"
 	},
 	"custom/leftspacer":{

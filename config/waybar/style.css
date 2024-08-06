@@ -99,6 +99,7 @@ window#waybar.hidden {
 	transition: none;
 	color: #1A1826;
 	background: #FAE3B0;
+	font-weight: bold;
 }
 
 #battery {
