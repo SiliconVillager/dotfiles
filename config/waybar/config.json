@@ -13,7 +13,8 @@
 		"on-click-right":"pavucontrol",
 		"format-icons": {
 			"default": ["", "", ""]
-		}
+		},
+		"ignored-sinks": ["Easy Effects Sink"]
 	},
 	"network": {
 		"tooltip": false,
