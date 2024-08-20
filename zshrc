@@ -191,7 +191,8 @@ alias jctl="journalctl -p 3 -xb"
 # youtube-dl
 alias yta-best="yt-dlp --extract-audio --audio-format best "
 alias yta="yt-dlp --extract-audio --audio-format mp3 "
-alias ytv="yt-dlp -f mp4 "
+alias ytv="yt-dlp "
+alias ytv-mp4="yt-dlp -f mp4 "
 alias ytv-best="yt-dlp -f bestvideo+bestaudio "
 
 # get fastest mirrors
