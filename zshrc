@@ -189,16 +189,10 @@ alias pscpu10='ps auxf | sort -nr -k 3 | head -10'
 alias jctl="journalctl -p 3 -xb"
 
 # youtube-dl
-alias yta-aac="youtube-dl --extract-audio --audio-format aac "
-alias yta-best="youtube-dl --extract-audio --audio-format best "
-alias yta-flac="youtube-dl --extract-audio --audio-format flac "
-alias yta-m4a="youtube-dl --extract-audio --audio-format m4a "
-alias yta-mp3="youtube-dl --extract-audio --audio-format mp3 "
-alias yta-opus="youtube-dl --extract-audio --audio-format opus "
-alias yta-vorbis="youtube-dl --extract-audio --audio-format vorbis "
-alias yta-wav="youtube-dl --extract-audio --audio-format wav "
-alias ytv="youtube-dl -f mp4 "
-alias ytv-best="youtube-dl -f bestvideo+bestaudio "
+alias yta-best="yt-dlp --extract-audio --audio-format best "
+alias yta="yt-dlp --extract-audio --audio-format mp3 "
+alias ytv="yt-dlp -f mp4 "
+alias ytv-best="yt-dlp -f bestvideo+bestaudio "
 
 # get fastest mirrors
 alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
