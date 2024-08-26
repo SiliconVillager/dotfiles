@@ -81,7 +81,7 @@
 		"on-click-right": "killall tofi-drun"
 	},
 	"custom/wallpaper":{
-		"format":"",
+		"format":" ",
 		"on-click": "waypaper"
 	},
 	"custom/leftspacer":{
@@ -101,8 +101,8 @@
 		"player-icons": {
 			"default": " ",
 			"spotify": " ",
-			"brave": "",
-			"vlc": ""
+			"brave": " ",
+			"vlc": " "
 		},
 		"status-icons": {
 			"playing": " ",
