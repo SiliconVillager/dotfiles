@@ -101,7 +101,7 @@
 		"player-icons": {
 			"default": " ",
 			"spotify": " ",
-			"brave": " ",
+			"brave, chrome, chromium": " ",
 			"vlc": " "
 		},
 		"status-icons": {
