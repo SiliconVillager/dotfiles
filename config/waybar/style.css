@@ -270,6 +270,11 @@ window#waybar.hidden {
 	background: #1db954;
 }
 
+#mpris.chromium {
+	color: white;
+	background: #105699;
+}
+
 #mpris.brave {
 	color: white;
 	background: #eb4a2b;
