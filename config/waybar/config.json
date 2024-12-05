@@ -11,6 +11,7 @@
 		"format-muted": "{icon} Muted",
 		"on-click":"pactl set-sink-mute @DEFAULT_SINK@ toggle",
 		"on-click-right":"pavucontrol",
+		"on-click-middle":"switch_audio_device.sh",
 		"format-icons": {
 			"default": ["", "", ""]
 		},
@@ -101,7 +102,9 @@
 		"player-icons": {
 			"default": " ",
 			"spotify": " ",
-			"brave, chrome, chromium": " ",
+			"brave": " ",
+			"chrome": " ",
+			"chromium": " ",
 			"vlc": " "
 		},
 		"status-icons": {
