@@ -1,13 +1,12 @@
 {
 	"layer": "top",
-	"modules-left": ["custom/leftspacer","custom/launcher", "custom/wallpaper", "cpu", "memory", "disk", "mpris"],
+	"modules-left": ["custom/leftspacer","custom/launcher", "wlr/taskbar", "custom/wallpaper", "cpu", "memory", "disk", "mpris"],
 	"modules-center": ["hyprland/workspaces"],
-	"modules-right": ["tray","pulseaudio","network","battery","clock","custom/rightspacer"],
+	"modules-right": ["tray","gamemode","bluetooth","hyprland/language","pulseaudio","network","battery","clock","custom/rightspacer"],
 
 	"pulseaudio": {
-		"tooltip": false,
 		"scroll-step": 1,
-		"format": "{icon} {volume}% ({desc})",
+		"format": "{icon} {volume}%",
 		"format-muted": "{icon} Muted",
 		"on-click":"pactl set-sink-mute @DEFAULT_SINK@ toggle",
 		"on-click-right":"pavucontrol",
@@ -105,11 +104,53 @@
 			"brave": " ",
 			"chrome": " ",
 			"chromium": " ",
-			"vlc": " "
+			"vlc": " ",
+			"mpv": " "
 		},
 		"status-icons": {
 			"playing": " ",
 			"paused": " ⏸"
 		}
+	},
+	"wlr/taskbar": {
+		"format": "{icon}",
+		"icon-size": {},
+		"icon-theme": "candy-icons",
+		"spacing": 0,
+		"tooltip-format": "{title}",
+		"on-click": "activate",
+		"on-click-middle": "close",
+		"on-click-right": "fullscreen",
+		"ignore-list": [
+			"com.github.hluk.copyq"
+		],
+		"app_ids-mapping": {
+			"firefoxdeveloperedition": "firefox-developer-edition"
+		}
+	},
+	"hyprland/language": {
+		"format": "{}",
+		"format-en": "En",
+		"format-cs": "Cs"
+	},
+	"bluetooth": {
+		"format": " {status}",
+		"format-disabled": "",
+		"format-connected": " {num_connections}",
+		"tooltip-format": "{controller_alias}\t{controller_address}",
+		"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+		"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+		"on-click": "blueman-manager"
+	},
+	"gamemode": {
+		"format": "{glyph}",
+		"format-alt": "{glyph} {count}",
+		"glyph": "",
+		"hide-not-running": true,
+		"use-icon": true,
+		"icon-name": "input-gaming-symbolic",
+		"icon-spacing": 4,
+		"tooltip": true,
+		"tooltip-format": "Games running: {count}"
 	}
 }
