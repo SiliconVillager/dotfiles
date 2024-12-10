@@ -1,11 +1,12 @@
+/* GENERAL STYLE */
 * {
 	border: none;
-	border-radius: 5px;
+	border-radius: 3px;
 	font-family: "Ubuntu";
 	font-size: 15px;
-	min-height: 10px;
 }
 
+/* WAYBAR WINDOW */
 window#waybar {
 	background: transparent;
 }
@@ -14,33 +15,55 @@ window#waybar.hidden {
 	opacity: 0.2;
 }
 
+/* MODULE GROUPS */
+.modules-right {
+	background: rgba(0.1, 0.1, 0.1, 0.7);
+	margin-top: 3px;
+}
+
+.modules-center {
+	background: rgba(0.1, 0.1, 0.1, 0.7);
+	margin-top: 3px;
+}
+
+.modules-left {
+	background: rgba(0.1, 0.1, 0.1, 0.7);
+	margin-top: 3px;
+}
+
+/* GENERAL MODULE STYLE */
+.module {
+	background: transparent;
+	/*margin-top: 4px;*/
+	/*margin-bottom: 4px;*/
+	margin-left: 4px;
+	margin-right: 4px;
+	padding-left: 4px;
+	padding-right: 4px;
+	min-width: 30px;
+}
+
+/* CONCRETE MODULES */
 #custom-leftspacer {
-	margin-left: 15px;
+	margin-left: 4px;
 }
 
 #custom-rightspacer {
-	margin-right: 15px;
+	margin-right: 4px;
 }
 
 #workspaces {
-	margin-top: 6px;
-	margin-left: 12px;
-	font-size: 4px;
-	margin-bottom: 0px;
 	transition: none;
 	background: #191724;
 }
 
 #workspaces button {
-	transition: none;
 	color: #e0def4;
 	background: transparent;
 	/*background: #191724;*/
-	font-size: 16px;
 	font-weight: bold;
 	border-radius: 0px;
-	min-width: 50px;
-	/*margin-right: 10px;*/
+	min-width: 20px;
 	border-bottom: 2px solid #191724;
 }
 
@@ -57,7 +80,6 @@ window#waybar.hidden {
 }
 
 #workspaces button:hover {
-	transition: none;
 	box-shadow: inherit;
 	text-shadow: inherit;
 	/*border-color: #f6c177;*/
@@ -70,35 +92,17 @@ window#waybar.hidden {
 }
 
 #network {
-	margin-top: 6px;
-	margin-left: 8px;
-	padding-left: 10px;
-	padding-right: 10px;
-	margin-bottom: 0px;
-	transition: none;
 	color: #161320;
 	background: #bd93f9;
 }
 
 #pulseaudio {
-	margin-top: 6px;
-	margin-left: 8px;
-	padding-left: 10px;
-	padding-right: 10px;
-	margin-bottom: 0px;
-	transition: none;
 	color: #1A1826;
 	background: #FAE3B0;
 	font-weight: bold;
 }
 
 #battery {
-	margin-top: 6px;
-	margin-left: 8px;
-	padding-left: 10px;
-	padding-right: 10px;
-	margin-bottom: 0px;
-	transition: none;
 	color: #161320;
 	background: #B5E8E0;
 }
@@ -126,141 +130,69 @@ window#waybar.hidden {
 }
 
 #backlight {
-	margin-top: 6px;
-	margin-left: 8px;
-	padding-left: 10px;
-	padding-right: 10px;
-	margin-bottom: 0px;
-	transition: none;
 	color: #161320;
 	background: #F8BD96;
 }
 
 #clock {
-	margin-top: 6px;
-	margin-left: 8px;
-	padding-left: 10px;
-	padding-right: 10px;
-	margin-bottom: 0px;
-	transition: none;
 	color: #161320;
 	background: #ABE9B3;
-	/*background: #1A1826;*/
 	font-weight: bold;
 }
 
 #memory {
-	margin-top: 6px;
-	margin-left: 8px;
-	padding-left: 10px;
-	margin-bottom: 0px;
-	padding-right: 10px;
-	transition: none;
 	color: #161320;
 	background: #DDB6F2;
 }
 
 #cpu {
-	margin-top: 6px;
-	margin-left: 8px;
-	padding-left: 10px;
-	margin-bottom: 0px;
-	padding-right: 10px;
-	transition: none;
 	color: #161320;
 	background: #96CDFB;
 }
 
 #disk {
-	margin-top: 6px;
-	margin-left: 8px;
-	padding-left: 10px;
-	margin-bottom: 0px;
-	padding-right: 10px;
-	transition: none;
 	color: #161320;
 	background: #FAE3B0;
 }
 
 #tray {
-	margin-top: 6px;
-	margin-left: 8px;
-	padding-left: 10px;
-	margin-bottom: 0px;
-	padding-right: 10px;
-	transition: none;
 	color: #B5E8E0;
-	/*background: #191724;*/
 	background: transparent;
 }
 
+#tray > .passive {
+    -gtk-icon-effect: dim;
+    background-color: #171717;
+    color: #ffffff;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #171717;
+    color: #ffffff;
+}
+
 #taskbar {
-	margin-top: 6px;
-	margin-left: 8px;
-	padding-left: 10px;
-	margin-bottom: 0px;
-	padding-right: 10px;
-	transition: none;
-	color: #B5E8E0;
-	/*background: #191724;*/
 	background: transparent;
 }
 
 #custom-launcher {
-	font-size: 24px;
-	margin-top: 6px;
-	padding-left: 10px;
-	padding-right: 5px;
-	transition: none;
+	font-size: 25px;
 	color: #2fba77;
 	background: transparent;
 }
 
-#custom-power {
-	font-size: 20px;
-	margin-top: 6px;
-	margin-left: 8px;
-	margin-right: 8px;
-	padding-left: 10px;
-	padding-right: 5px;
-	margin-bottom: 0px;
-	border-radius: 10px;
-	transition: none;
-	color: #161320;
-	background: #F28FAD;
-}
-
 #custom-wallpaper {
-	margin-top: 6px;
-	margin-left: 8px;
-	padding-left: 10px;
-	padding-right: 10px;
-	margin-bottom: 0px;
-	transition: none;
 	color: #161320;
 	background: #C9CBFF;
 }
 
 #custom-updates {
-	margin-top: 6px;
-	margin-left: 8px;
-	padding-left: 10px;
-	padding-right: 10px;
-	margin-bottom: 0px;
-	border-radius: 10px;
-	transition: none;
 	color: #161320;
 	background: #E8A2AF;
 }
 
 #mpris {
-	margin-top: 6px;
-	margin-left: 8px;
-	padding-left: 10px;
-	padding-right: 10px;
-	margin-bottom: 0px;
-	border-radius: 5px;
-	transition: none;
 	color: #e0def4;
 	background: #F2CDCD;
 	font-weight: bold;
@@ -288,12 +220,6 @@ window#waybar.hidden {
 }
 
 #language {
-	margin-top: 6px;
-	margin-left: 8px;
-	padding-left: 10px;
-	padding-right: 10px;
-	margin-bottom: 0px;
-	transition: none;
 	color: #161320;
 	background: #ABE9B3;
 	/*background: #1A1826;*/
@@ -301,27 +227,13 @@ window#waybar.hidden {
 }
 
 #bluetooth {
-	margin-top: 6px;
-	margin-left: 8px;
-	padding-left: 10px;
-	padding-right: 10px;
-	margin-bottom: 0px;
-	transition: none;
 	color: #1A1826;
 	background: #FAE3B0;
 	font-weight: bold;
 }
 
 #gamemode {
-	margin-top: 6px;
-	margin-left: 8px;
-	padding-left: 10px;
-	padding-right: 10px;
-	margin-bottom: 0px;
-	transition: none;
 	color: #1A1826;
 	background: #FAE3B0;
-	font-weight: bold;
 }
-
 

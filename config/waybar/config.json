@@ -1,9 +1,31 @@
 {
 	"layer": "top",
-	"modules-left": ["custom/leftspacer","custom/launcher", "wlr/taskbar", "custom/wallpaper", "cpu", "memory", "disk", "mpris"],
-	"modules-center": ["hyprland/workspaces"],
-	"modules-right": ["tray","gamemode","bluetooth","hyprland/language","pulseaudio","network","battery","clock","custom/rightspacer"],
-
+	"modules-left":
+	[
+		"custom/launcher",
+		"custom/wallpaper",
+		"cpu",
+		"memory",
+		"disk",
+		"hyprland/workspaces",
+		"mpris",
+		"custom/rightspacer"
+	],
+	"modules-center":
+	[
+		"wlr/taskbar"
+	],
+	"modules-right":
+	[
+		"tray",
+		"gamemode",
+		"bluetooth",
+		"hyprland/language",
+		"pulseaudio",
+		"network",
+		"battery",
+		"clock"
+	],
 	"pulseaudio": {
 		"scroll-step": 1,
 		"format": "{icon} {volume}%",
@@ -35,7 +57,7 @@
 	},
 	"tray":{
 		"icon-size":18,
-		"spacing": 18
+		"spacing": 12
 	},
 	"clock": {
 		"format": "{:%A, %d. %m. %Y %R}",
@@ -81,7 +103,7 @@
 		"on-click-right": "killall tofi-drun"
 	},
 	"custom/wallpaper":{
-		"format":" ",
+		"format":"",
 		"on-click": "waypaper"
 	},
 	"custom/leftspacer":{
@@ -96,16 +118,16 @@
 		"all-outputs": false
 	},
 	"mpris": {
-		"format": "{player_icon} {player}: {title} {status_icon}",
-		"format-paused": "{player_icon} {player}: <i>{title}</i> {status_icon}",
+		"format": " {player_icon} {player}: {title} {status_icon} ",
+		"format-paused": " {player_icon} {player}: <i>{title}</i> {status_icon} ",
 		"player-icons": {
 			"default": " ",
-			"spotify": " ",
-			"brave": " ",
-			"chrome": " ",
-			"chromium": " ",
-			"vlc": " ",
-			"mpv": " "
+			"spotify": "  ",
+			"brave": "  ",
+			"chrome": "  ",
+			"chromium": "  ",
+			"vlc": "  ",
+			"mpv": "  "
 		},
 		"status-icons": {
 			"playing": " ",
@@ -114,9 +136,9 @@
 	},
 	"wlr/taskbar": {
 		"format": "{icon}",
-		"icon-size": {},
+		"icon-size": 18,
 		"icon-theme": "candy-icons",
-		"spacing": 0,
+		"spacing": 12,
 		"tooltip-format": "{title}",
 		"on-click": "activate",
 		"on-click-middle": "close",
@@ -130,8 +152,8 @@
 	},
 	"hyprland/language": {
 		"format": "{}",
-		"format-en": "En",
-		"format-cs": "Cs"
+		"format-en": "EN",
+		"format-cs": "CS"
 	},
 	"bluetooth": {
 		"format": " {status}",
