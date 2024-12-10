@@ -8,7 +8,8 @@
 
 /* WAYBAR WINDOW */
 window#waybar {
-	background: transparent;
+	/*background: transparent;*/
+	background: rgba(0.1, 0.1, 0.1, 0.7);
 }
 
 window#waybar.hidden {
@@ -17,18 +18,18 @@ window#waybar.hidden {
 
 /* MODULE GROUPS */
 .modules-right {
-	background: rgba(0.1, 0.1, 0.1, 0.7);
-	margin-top: 3px;
+	/*background: rgba(0.1, 0.1, 0.1, 0.7);*/
+	margin-top: 1px;
 }
 
 .modules-center {
-	background: rgba(0.1, 0.1, 0.1, 0.7);
-	margin-top: 3px;
+	/*background: rgba(0.1, 0.1, 0.1, 0.7);*/
+	margin-top: 1px;
 }
 
 .modules-left {
-	background: rgba(0.1, 0.1, 0.1, 0.7);
-	margin-top: 3px;
+	/*background: rgba(0.1, 0.1, 0.1, 0.7);*/
+	margin-top: 1px;
 }
 
 /* GENERAL MODULE STYLE */
