@@ -1,7 +1,7 @@
 /* GENERAL STYLE */
 * {
 	border: none;
-	border-radius: 3px;
+	border-radius: 0px;
 	font-family: "Ubuntu";
 	font-size: 15px;
 }
@@ -19,17 +19,17 @@ window#waybar.hidden {
 /* MODULE GROUPS */
 .modules-right {
 	/*background: rgba(0.1, 0.1, 0.1, 0.7);*/
-	margin-top: 1px;
+	margin-top: 0px;
 }
 
 .modules-center {
 	/*background: rgba(0.1, 0.1, 0.1, 0.7);*/
-	margin-top: 1px;
+	margin-top: 0px;
 }
 
 .modules-left {
 	/*background: rgba(0.1, 0.1, 0.1, 0.7);*/
-	margin-top: 1px;
+	margin-top: 0px;
 }
 
 /* GENERAL MODULE STYLE */
@@ -37,10 +37,10 @@ window#waybar.hidden {
 	background: transparent;
 	/*margin-top: 4px;*/
 	/*margin-bottom: 4px;*/
-	margin-left: 4px;
-	margin-right: 4px;
-	padding-left: 4px;
-	padding-right: 4px;
+	margin-left: 0px;
+	margin-right: 0px;
+	padding-left: 6px;
+	padding-right: 6px;
 	min-width: 30px;
 }
 
@@ -159,6 +159,8 @@ window#waybar.hidden {
 #tray {
 	color: #B5E8E0;
 	background: transparent;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 #tray > .passive {

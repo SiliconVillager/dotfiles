@@ -75,6 +75,7 @@
 				"today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
 			}
 		},
+		"on-click": "gnome-calendar",
 		"actions":  {
 			"on-click-right": "mode",
 			"on-click-forward": "tz_up",
