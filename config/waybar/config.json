@@ -100,8 +100,8 @@
 	},
 	"custom/launcher":{
 		"format": " ",
-		"on-click": "tofi-drun",
-		"on-click-right": "killall tofi-drun"
+		"on-click": "nwg-drawer",
+		"on-click-right": "nautilus --new-window"
 	},
 	"custom/wallpaper":{
 		"format":"",
