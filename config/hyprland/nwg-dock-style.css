@@ -14,7 +14,7 @@ window {
 #active {
 	/* This is to underline the button representing the currently active window */
 	border-bottom: solid 2px;
-	border-color: rgba(255, 255, 255, 1.0);
+	border-color: #00d5d9;
 }
 
 button, image {
