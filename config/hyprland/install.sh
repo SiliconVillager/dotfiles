@@ -7,4 +7,5 @@ if [ -d "$HYPRLAND_CONFIG_DIR" ]; then
 fi
 
 ln -s "$(pwd)" "$HYPRLAND_CONFIG_DIR"
+ln -s "$(pwd)/nwg-dock-style.css" ~/.config/nwg-dock-hyprland/style.css
 
