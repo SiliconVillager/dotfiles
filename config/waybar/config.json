@@ -7,12 +7,12 @@
 		"cpu",
 		"memory",
 		"disk",
-		"hyprland/workspaces",
 		"mpris",
 		"custom/rightspacer"
 	],
 	"modules-center":
 	[
+		"hyprland/workspaces",
 		"wlr/taskbar"
 	],
 	"modules-right":

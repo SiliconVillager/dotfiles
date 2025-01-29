@@ -8,8 +8,7 @@
 
 /* WAYBAR WINDOW */
 window#waybar {
-	/*background: transparent;*/
-	background: rgba(0.1, 0.1, 0.1, 0.7);
+	background: transparent;
 }
 
 window#waybar.hidden {
@@ -18,18 +17,25 @@ window#waybar.hidden {
 
 /* MODULE GROUPS */
 .modules-right {
-	/*background: rgba(0.1, 0.1, 0.1, 0.7);*/
+	background: rgba(0.1, 0.1, 0.1, 0.9);
 	margin-top: 0px;
+	border-bottom-left-radius: 10px;
+	padding-left: 4px;
 }
 
 .modules-center {
-	/*background: rgba(0.1, 0.1, 0.1, 0.7);*/
+	background: rgba(0.1, 0.1, 0.1, 0.9);
 	margin-top: 0px;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	padding-left: 4px;
+	padding-right: 4px;
 }
 
 .modules-left {
-	/*background: rgba(0.1, 0.1, 0.1, 0.7);*/
+	background: rgba(0.1, 0.1, 0.1, 0.9);
 	margin-top: 0px;
+	border-bottom-right-radius: 10px;
 }
 
 /* GENERAL MODULE STYLE */
@@ -51,15 +57,15 @@ window#waybar.hidden {
 
 #custom-rightspacer {
 	margin-right: 4px;
+	min-width: 4px;
 }
 
 #workspaces {
 	transition: none;
-	background: #191724;
 }
 
 #workspaces button {
-	color: #e0def4;
+	color: cyan;
 	background: transparent;
 	/*background: #191724;*/
 	font-weight: bold;
@@ -93,14 +99,12 @@ window#waybar.hidden {
 }
 
 #network {
-	color: #161320;
-	background: #bd93f9;
+	color: cyan;
 }
 
 #pulseaudio {
-	color: #1A1826;
-	background: #FAE3B0;
 	font-weight: bold;
+	color: darkorange;
 }
 
 #battery {
@@ -136,24 +140,20 @@ window#waybar.hidden {
 }
 
 #clock {
-	color: #161320;
-	background: #ABE9B3;
+	color: cyan;
 	font-weight: bold;
 }
 
 #memory {
-	color: #161320;
-	background: #DDB6F2;
+	color: fuchsia;
 }
 
 #cpu {
-	color: #161320;
-	background: #96CDFB;
+	color: gold;
 }
 
 #disk {
-	color: #161320;
-	background: #FAE3B0;
+	color: lime;
 }
 
 #tray {
@@ -183,60 +183,41 @@ window#waybar.hidden {
 	font-size: 25px;
 	color: #2fba77;
 	background: transparent;
+	padding-left: 10px;
 }
 
 #custom-wallpaper {
-	color: #161320;
-	background: #C9CBFF;
-}
-
-#custom-updates {
-	color: #161320;
-	background: #E8A2AF;
+	color: cyan;
 }
 
 #mpris {
-	color: #e0def4;
-	background: #F2CDCD;
+	color: cyan;
 	font-weight: bold;
-	background: #191724;
 }
 
 #mpris.spotify {
-	color: #191414;
-	background: #1db954;
-}
-
-#mpris.chromium {
-	color: white;
-	background: #105699;
+	color: #1db954;
 }
 
 #mpris.brave {
-	color: white;
-	background: #eb4a2b;
+	color: #eb4a2b;
 }
 
 #mpris.vlc {
-	color: #191414;
-	background: #f79301;
+	color: #f79301;
 }
 
 #language {
-	color: #161320;
-	background: #ABE9B3;
-	/*background: #1A1826;*/
+	color: lawngreen;
 	font-weight: bold;
 }
 
 #bluetooth {
-	color: #1A1826;
-	background: #FAE3B0;
+	color: deepskyblue;
 	font-weight: bold;
 }
 
 #gamemode {
-	color: #1A1826;
-	background: #FAE3B0;
+	color: cyan;
 }
 
