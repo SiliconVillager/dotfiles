@@ -234,3 +234,6 @@ PERL_MB_OPT="--install_base \"/home/tomas/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/tomas/perl5"; export PERL_MM_OPT;
 
 export PATH="${HOME}/arch-cheats:$PATH"
+
+# Force GPG password prompt to use curses
+export PINENTRY_USER_DATA="USE_CURSES=1"
