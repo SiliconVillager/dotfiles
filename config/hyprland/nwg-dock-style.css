@@ -21,7 +21,7 @@ window {
 
 button, image {
 	background: none;
-	border-style: none;}
+	border-style: none;
 	box-shadow: none;
 	color: #999
 }
