@@ -6,9 +6,7 @@
 		"custom/wallpaper",
 		"cpu",
 		"memory",
-		"disk",
-		"mpris",
-		"custom/rightspacer"
+		"disk"
 	],
 	"modules-center":
 	[
@@ -132,8 +130,7 @@
 		"status-icons": {
 			"playing": " ",
 			"paused": " ⏸"
-		},
-		"ignored-players": ["mpv"]
+		}
 	},
 	"wlr/taskbar": {
 		"format": "{icon}",
