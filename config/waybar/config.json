@@ -127,13 +127,13 @@
 			"brave": "  ",
 			"chrome": "  ",
 			"chromium": "  ",
-			"vlc": "  ",
-			"mpv": "  "
+			"vlc": "  "
 		},
 		"status-icons": {
 			"playing": " ",
 			"paused": " ⏸"
-		}
+		},
+		"ignored-players": ["mpv"]
 	},
 	"wlr/taskbar": {
 		"format": "{icon}",
