@@ -6,7 +6,8 @@
 		"custom/wallpaper",
 		"cpu",
 		"memory",
-		"disk"
+		"disk",
+		"custom/rightspacer"
 	],
 	"modules-center":
 	[

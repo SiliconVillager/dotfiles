@@ -3,7 +3,7 @@
 TMUX_CONFIG=~/.tmux.conf
 
 if [ -e "$TMUX_CONFIG" ]; then
-	rm -rf "$TMUX_CONFIG"
+	rm -f "$TMUX_CONFIG"
 fi
 
 ln -s "$(pwd)/tmux.conf" "$TMUX_CONFIG"
