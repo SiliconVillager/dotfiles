@@ -63,4 +63,12 @@ return require('packer').startup(function(use)
   -- Copilot
   use('github/copilot.vim')
 
+	-- Comment
+	use {
+    'numToStr/Comment.nvim',
+    config = function()
+        require('Comment').setup()
+    end
+	}
+
 end)
