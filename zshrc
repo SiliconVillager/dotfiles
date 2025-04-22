@@ -194,6 +194,7 @@ alias yta="yt-dlp --extract-audio --audio-format mp3 "
 alias ytv="yt-dlp "
 alias ytv-mp4="yt-dlp -f mp4 "
 alias ytv-best="yt-dlp -f bestvideo+bestaudio "
+alias ytpl='yt-dlp -f mp4 -o "%(playlist_index)03d - %(title)s.%(ext)s" '
 
 # get fastest mirrors
 alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
