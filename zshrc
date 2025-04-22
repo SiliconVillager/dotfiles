@@ -189,11 +189,11 @@ alias pscpu10='ps auxf | sort -nr -k 3 | head -10'
 alias jctl="journalctl -p 3 -xb"
 
 # youtube-dl
-alias yta="yt-dlp --extract-audio --audio-format best "
+alias yta="yt-dlp --extract-audio --audio-format best --no-overwrites "
 alias ytv="yt-dlp -f bestvideo+bestaudio "
 alias ytv-brave="yt-dlp -f bestvideo+bestaudio --cookies-from-browser brave+gnomekeyring "
-alias ytpl='yt-dlp -f bestvideo+bestaudio -o "%(playlist_index)03d - %(title)s.%(ext)s" '
-alias ytpl-brave='yt-dlp -f bestvideo+bestaudio -o "%(playlist_index)03d - %(title)s.%(ext)s" --cookies-from-browser brave+gnomekeyring '
+alias ytpl='yt-dlp -f bestvideo+bestaudio -o "%(playlist_index)03d - %(title)s.%(ext)s" --download-archive archive.txt '
+alias ytpl-brave='yt-dlp -f bestvideo+bestaudio -o "%(playlist_index)03d - %(title)s.%(ext)s" --download-archive archive.txt --cookies-from-browser brave+gnomekeyring '
 
 # get fastest mirrors
 alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
