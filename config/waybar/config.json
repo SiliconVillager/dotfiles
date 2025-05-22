@@ -99,7 +99,7 @@
 	},
 	"custom/launcher":{
 		"format": " ",
-		"on-click": "nwg-drawer",
+		"on-click": "nwg-drawer -ovl",
 		"on-click-right": "nautilus --new-window"
 	},
 	"custom/wallpaper":{
