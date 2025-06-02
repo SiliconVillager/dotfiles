@@ -9,4 +9,5 @@ solaar --window hide &
 dropbox start &
 nm-applet &
 copyq --start-server &
+sh ~/dotfiles/scripts/run-nwg-docks.sh &
 
