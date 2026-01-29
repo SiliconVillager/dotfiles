@@ -53,20 +53,19 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 -- (Optional) Configure lua language server for neovim
-vim.lsp.enable("lua_ls")
+require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 
-local gdscript_config = {
-  on_attach = function(client)
+require 'lspconfig'.gdscript.setup {
+  on_attach = function (client)
     local _notify = client.notify
-    client.notify = function(method, params)
-      if method == "textDocument/didClose" then
-        -- Godot doesn't implement didClose yet
-        return
+    client.notify = function (method, params)
+      if method == 'textDocument/didClose' then
+          -- Godot doesn't implement didClose yet
+          return
       end
       _notify(method, params)
     end
-  end,
+  end
 }
 
-vim.lsp.config("gdscript", gdscript_config)
-vim.lsp.enable("gdscript")
+lsp.setup()
