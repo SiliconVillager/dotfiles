@@ -8,7 +8,9 @@ local cwd = vim.fn.getcwd()
 
 -- iterate over paths and check
 for key, value in pairs(paths_to_check) do
-    if vim.uv.fs_stat(cwd .. value .. 'project.godot') then
+		local temp_path = cwd .. value .. 'project.godot'
+		print(temp_path)
+    if vim.uv.fs_stat(temp_path) then
         is_godot_project = true
         godot_project_path = cwd .. value
 				print('Godot project detected at: ' .. godot_project_path)
@@ -17,8 +19,8 @@ for key, value in pairs(paths_to_check) do
 end
 
 -- check if server is already running in godot project path
-local is_server_running = vim.uv.fs_stat(godot_project_path .. '/tmp/nvimserver.pipe')
+local is_server_running = vim.uv.fs_stat('/tmp/nvimserver.pipe')
 -- start server, if not already running
 if is_godot_project and not is_server_running then
-    vim.fn.serverstart(godot_project_path .. '/tmp/nvimserver.pipe')
+    vim.fn.serverstart('/tmp/nvimserver.pipe')
 end
