@@ -1,71 +1,86 @@
-local lsp = require('lsp-zero').preset({})
+-- =========================
+-- nvim-cmp setup
+-- =========================
+local cmp = require("cmp")
 
-lsp.preset("recommended")
-
-local cmp = require('cmp')
-local cmp_select = {behavior = cmp.SelectBehavior.Select}
-local cmp_mappings = lsp.defaults.cmp_mappings({
-  ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-  ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-  ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-  ["<C-Space>"] = cmp.mapping.complete(),
+cmp.setup({
+  mapping = {
+    ["<C-p>"]     = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
+    ["<C-n>"]     = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
+    ["<C-y>"]     = cmp.mapping.confirm({ select = true }),
+    ["<C-Space>"] = cmp.mapping.complete(),
+    ["<Tab>"]     = nil,
+    ["<S-Tab>"]   = nil,
+  },
 })
 
-local cmp = require('cmp')
-local cmp_select = {behavior = cmp.SelectBehavior.Select}
-local cmp_mappings = lsp.defaults.cmp_mappings({
-      ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-        ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-          ['<C-y>'] = cmp.mapping.confirm({ select = true }),
-            ["<C-Space>"] = cmp.mapping.complete(),
-        })
+-- =========================
+-- Shared LSP on_attach
+-- =========================
+local function on_attach(_, bufnr)
+  local opts = { buffer = bufnr, remap = false }
 
-        cmp_mappings['<Tab>'] = nil
-        cmp_mappings['<S-Tab>'] = nil
+  vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+  vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+  vim.keymap.set("n", "<leader>vws", vim.lsp.buf.workspace_symbol, opts)
+  vim.keymap.set("n", "<leader>vd", vim.diagnostic.open_float, opts)
+  vim.keymap.set("n", "<leader>vca", vim.lsp.buf.code_action, opts)
+  vim.keymap.set("n", "<leader>vrr", vim.lsp.buf.references, opts)
+  vim.keymap.set("n", "<leader>vrn", vim.lsp.buf.rename, opts)
+  vim.keymap.set("i", "<C-h>", vim.lsp.buf.signature_help, opts)
+end
 
-        lsp.setup_nvim_cmp({
-              mapping = cmp_mappings
-          })
+-- =========================
+-- Capabilities for nvim-cmp
+-- =========================
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-
-cmp_mappings['<Tab>'] = nil
-cmp_mappings['<S-Tab>'] = nil
-
-lsp.setup_nvim_cmp({
-  mapping = cmp_mappings
+-- =========================
+-- Lua Language Server
+-- =========================
+vim.lsp.config("lua_ls", {
+  capabilities = capabilities,
+  on_attach = on_attach,
+  settings = {
+    Lua = {
+      runtime = { version = "LuaJIT" },
+      diagnostics = { globals = { "vim" } },
+      workspace = { library = vim.api.nvim_get_runtime_file("", true) },
+      telemetry = { enable = false },
+    },
+  },
 })
 
-lsp.on_attach(function(client, bufnr)
-    -- see :help lsp-zero-keybindings
-    -- to learn the available actions
-    lsp.default_keymaps({buffer = bufnr})
+-- =========================
+-- Godot GDScript LSP
+-- =========================
+local pipe = '/tmp/godot.pipe'
 
-    local opts = {buffer = bufnr, remap = false}
+vim.lsp.config("gdscript", {
+  name = "Godot",
+  cmd = vim.lsp.rpc.connect("127.0.0.1", 6005),
+  filetypes = { "gdscript" },
+  root_dir = vim.fs.dirname(vim.fs.find({ 'project.godot', '.git' }, { upward = false })[1]),
 
-    vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
-    vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
-    vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
-    vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
-    vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
-    vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
-    vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
-    vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
-end)
+  capabilities = capabilities,
 
--- (Optional) Configure lua language server for neovim
-require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+  on_attach = function(client, bufnr)
+    vim.api.nvim_command('echo serverstart("' .. pipe .. '")')
 
-require 'lspconfig'.gdscript.setup {
-  on_attach = function (client)
     local _notify = client.notify
-    client.notify = function (method, params)
-      if method == 'textDocument/didClose' then
-          -- Godot doesn't implement didClose yet
-          return
+    client.notify = function(method, params)
+      if method == "textDocument/didClose" then
+        return
       end
       _notify(method, params)
     end
-  end
-}
 
-lsp.setup()
+    on_attach(client, bufnr)
+  end,
+})
+
+-- =========================
+-- Enable LSP servers
+-- =========================
+vim.lsp.enable("lua_ls")
+vim.lsp.enable("gdscript")
