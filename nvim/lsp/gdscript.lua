@@ -8,10 +8,12 @@ print("gdscript LSP")
 
 local port = os.getenv 'GDScript_Port' or '6005'
 local cmd = vim.lsp.rpc.connect('127.0.0.1', tonumber(port))
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 ---@type vim.lsp.Config
 return {
   cmd = cmd,
+	capabilities = capabilities,
   filetypes = { 'gd', 'gdscript', 'gdscript3' },
   root_markers = { 'project.godot', '.git' },
 }
