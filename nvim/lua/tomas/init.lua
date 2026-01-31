@@ -1,5 +1,9 @@
-require("tomas.remap")
-require("tomas.set")
+print("Custom init.lua loaded")
+
 require("tomas.packer")
+require("tomas.set")
+require("tomas.remap")
+require("tomas.lsp")
+require("tomas.gdscript")
 require("autoclose").setup()
 require("tomas.copilot")
