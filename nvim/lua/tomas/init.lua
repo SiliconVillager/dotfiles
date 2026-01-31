@@ -1,4 +1,5 @@
 require("tomas.packer")
+require("mason").setup()
 require("tomas.set")
 require("tomas.remap")
 require("tomas.lsp")
