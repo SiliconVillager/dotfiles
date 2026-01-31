@@ -46,34 +46,29 @@ return require('packer').startup(function(use)
 	  config = function()
 		  vim.cmd('colorscheme rose-pine')
 	  end
-  })
+	})
 
-  -- LSP
-  use {
-	  'VonHeikemen/lsp-zero.nvim',
-	  branch = 'v2.x',
-	  requires = {
-		  -- LSP Support
-		  {'neovim/nvim-lspconfig'},             -- Required
-		  {'williamboman/mason.nvim'},           -- Optional
-		  {'williamboman/mason-lspconfig.nvim'}, -- Optional
+	-- LSP core
+	use 'neovim/nvim-lspconfig'
 
-		  -- Autocompletion
-		  {'hrsh7th/nvim-cmp'},     -- Required
-		  {'hrsh7th/cmp-nvim-lsp'}, -- Required
-		  {'L3MON4D3/LuaSnip'},     -- Required
-	  }
-  }
+	-- Mason
+	use 'williamboman/mason.nvim'
+	use 'williamboman/mason-lspconfig.nvim'
 
-  -- Copilot
-  use('github/copilot.vim')
+	-- Completion
+	use 'hrsh7th/nvim-cmp'
+	use 'hrsh7th/cmp-nvim-lsp'
+	use 'L3MON4D3/LuaSnip'
+
+	-- Copilot
+	use('github/copilot.vim')
 
 	-- Comment
 	use {
-    'numToStr/Comment.nvim',
-    config = function()
-        require('Comment').setup()
-    end
+		'numToStr/Comment.nvim',
+		config = function()
+			require('Comment').setup()
+		end
 	}
 
 end)

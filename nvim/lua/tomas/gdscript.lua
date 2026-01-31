@@ -1,5 +1,3 @@
-print('Loading gdscript.lua')
-
 -- paths to check for project.godot file
 local paths_to_check = {'/', '/../', '/../../', '/../../../', '/../../../../'}
 local is_godot_project = false

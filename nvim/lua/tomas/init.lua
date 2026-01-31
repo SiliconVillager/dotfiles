@@ -1,4 +1,4 @@
-print("Custom init.lua loaded")
+print("Config tomas loaded")
 
 require("tomas.packer")
 require("tomas.set")
