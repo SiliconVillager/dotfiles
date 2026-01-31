@@ -1,5 +1,3 @@
-print("gdscript LSP")
-
 ---@brief
 ---
 --- https://github.com/godotengine/godot

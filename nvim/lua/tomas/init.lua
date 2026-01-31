@@ -1,5 +1,3 @@
-print("Config tomas loaded")
-
 require("tomas.packer")
 require("tomas.set")
 require("tomas.remap")
