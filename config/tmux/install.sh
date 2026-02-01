@@ -1,10 +1,10 @@
 #!/bin/bash
 
-TMUX_CONFIG=~/.tmux.conf
+CONFIG_FILE=~/.tmux.conf
 
-if [ -e "$TMUX_CONFIG" ]; then
-	rm -f "$TMUX_CONFIG"
+if [ -e "$CONFIG_FILE" ] || [ -L "$CONFIG_FILE" ]; then
+	rm -f "$CONFIG_FILE"
 fi
 
-ln -s "$(pwd)/tmux.conf" "$TMUX_CONFIG"
+ln -s "$(pwd)/tmux.conf" "$CONFIG_FILE"
 

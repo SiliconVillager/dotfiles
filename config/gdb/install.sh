@@ -1,10 +1,10 @@
 #!/bin/bash
 
-GDB_CONFIG=~/.gdbinit
+CONFIG_FILE=~/.gdbinit
 
-if [ -e "$GDB_CONFIG" ]; then
-	rm -f "$GDB_CONFIG"
+if [ -e "$CONFIG_FILE" ] || [ -L "$CONFIG_FILE" ]; then
+	rm -f "$CONFIG_FILE"
 fi
 
-ln -s "$(pwd)/gdbinit" "$GDB_CONFIG"
+ln -s "$(pwd)/gdbinit" "$CONFIG_FILE"
 

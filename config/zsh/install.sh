@@ -1,10 +1,10 @@
 #!/bin/bash
 
-ZSH_CONFIG=~/.zshrc
+CONFIG_FILE=~/.zshrc
 
-if [ -e "$ZSH_CONFIG" ]; then
-	rm -f "$ZSH_CONFIG"
+if [ -e "$CONFIG_FILE" ] || [ -L "$CONFIG_FILE" ]; then
+	rm -f "$CONFIG_FILE"
 fi
 
-ln -s "$(pwd)/zshrc" "$ZSH_CONFIG"
+ln -s "$(pwd)/zshrc" "$CONFIG_FILE"
 
