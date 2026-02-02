@@ -120,6 +120,10 @@ if [ -d "$HOME/Applications" ] ;
   then PATH="$HOME/Applications:$PATH"
 fi
 
+if [ -d "$HOME/dotfiles/config/rofi/config/bin" ] ;
+	then PATH="$HOME/dotfiles/config/rofi/config/bin:$PATH"
+fi
+
 ### ARCHIVE EXTRACTION
 # usage: ex <file>
 ex ()

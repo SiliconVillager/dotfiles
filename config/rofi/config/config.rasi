@@ -1,0 +1,12 @@
+
+//@theme "/usr/share/rofi/themes/DarkBlue.rasi"
+
+//@theme "/home/tomas/.local/share/rofi/themes/rounded-green-dark.rasi"
+
+configuration {
+  show-icons:         true;
+  icon-theme:         "Papirus";
+}
+
+
+@theme "/home/tomas/.local/share/rofi/themes/rounded-green-dark.rasi"
